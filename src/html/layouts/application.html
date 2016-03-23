@@ -1,0 +1,48 @@
+{% from 'macros/helpers.html' import sprite %}
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{% block title %}Learn to code at our online coding bootcamp | Devschool{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}Learn to code from an expert mentor in our online coding bootcamp, building real world web applications | Devschool{% endblock %}">
+
+    {% include "shared/seo-stuff.html" %}
+    {% include "shared/ld-json.html" %}
+    {% include "shared/app-icons.html" %}
+
+    <link href="//fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="stylesheets/style.css" type="text/css" />
+    <link rel="stylesheet" href="stylesheets/dark.css" type="text/css" />
+    <link rel="stylesheet" href="stylesheets/swiper.css" type="text/css" />
+    <link rel="stylesheet" href="stylesheets/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="stylesheets/animate.css" type="text/css" />
+    <link rel="stylesheet" href="stylesheets/magnific-popup.css" type="text/css" />
+    <link rel="stylesheet" href="stylesheets/responsive.css" type="text/css" />
+    <!--[if lt IE 9]>
+      <script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+    {% block head %}{% endblock %}
+  </head>
+
+  <body class="stretched avgrund-blur">
+    <div id="wrapper" class="clearfix">
+      {% include "shared/header.html" %}
+      {% block content %}{% endblock %}
+      {% include "shared/footer.html" %}
+      <div id="gotoTop" class="icon-angle-up"></div>
+    </div>
+    {% include "shared/chatio-slack.html" %}
+    {% include "shared/ganalytics.html" %}
+    {% block javascript %}{% endblock %}
+    <script type="text/javascript" src="javascripts/jquery.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.bootstrap.js"></script>
+    <script type="text/javascript" src="javascripts/plugins.js"></script>
+    <script type="text/javascript" src="javascripts/functions.js"></script>
+  </body>
+
+</html>
