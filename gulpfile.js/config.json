@@ -19,11 +19,7 @@
     "js": {
       "src": "javascripts",
       "dest": "javascripts",
-      "extractSharedJs": true,
-      "entries": {
-        "app": ["./app.js"],
-        "page": ["./page.js"]
-      },
+      "scripts": ["jquery", "jquery.boostrap", "plugins", "functions"],
       "extensions": ["js"]
     },
 
