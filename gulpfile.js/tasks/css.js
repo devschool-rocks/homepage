@@ -3,26 +3,21 @@ if(!config.tasks.css) return
 
 var gulp         = require('gulp')
 var browserSync  = require('browser-sync')
-var css          = require('gulp-clean-css')
-var sourcemaps   = require('gulp-sourcemaps')
 var handleErrors = require('../lib/handleErrors')
-var autoprefixer = require('gulp-autoprefixer')
 var path         = require('path')
+var concat       = require('gulp-concat')
 
 var paths = {
-  src: path.join(config.root.src, config.tasks.css.src, '/**/*.{' + config.tasks.css.extensions + '}'),
+  src: path.join(config.root.src, config.tasks.css.src, '/*.css'),
   dest: path.join(config.root.dest, config.tasks.css.dest)
 }
 
 var cssTask = function () {
   return gulp.src(paths.src)
-    .pipe(sourcemaps.init())
-    .pipe(css({compatibility: 'ie8'}))
     .on('error', handleErrors)
-    .pipe(autoprefixer(config.tasks.css.autoprefixer))
-    .pipe(sourcemaps.write())
+    .pipe(concat('all.css'))
     .pipe(gulp.dest(paths.dest))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.stream());
 }
 
 gulp.task('css', cssTask)
