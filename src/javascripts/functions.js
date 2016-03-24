@@ -3572,4 +3572,6 @@ var SEMICOLON = SEMICOLON || {};
     scrollTo(800, $("#apply").position().top);
   });
 
+  $('#applyModal').modal('hide');
+
 })(jQuery);
