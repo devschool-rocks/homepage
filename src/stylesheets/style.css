@@ -2932,6 +2932,7 @@ body:not(.stretched) .slider-parallax .slider-parallax-inner { left: auto; }
 }
 
 .slider-caption h2 {
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.73) !important;
 	font-size: 64px;
 	letter-spacing: 2px;
 	text-transform: uppercase;
