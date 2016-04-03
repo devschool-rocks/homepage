@@ -11088,8 +11088,8 @@ label.error { display: none !important; }
 	color: #FFF;
 	top: auto;
 	left: auto;
-	right: 30px;
-	bottom: 50px;
+	right: 50%;
+	bottom: 20px;
 	cursor: pointer;
 	border-radius: 2px;
 }
