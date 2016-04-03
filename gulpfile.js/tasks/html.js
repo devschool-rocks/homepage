@@ -38,7 +38,6 @@ var htmlTask = function() {
     .pipe(gulpif(process.env.NODE_ENV == 'production', htmlmin(config.tasks.html.htmlmin)))
     .pipe(gulp.dest(paths.dest))
     .pipe(browserSync.stream())
-
 }
 
 gulp.task('html', htmlTask)

@@ -6,6 +6,7 @@ var browserSync  = require('browser-sync')
 var handleErrors = require('../lib/handleErrors')
 var path         = require('path')
 var concat       = require('gulp-concat')
+var uglify       = require('gulp-uglify')
 
 var paths = {
   src: path.join(config.root.src, config.tasks.js.src, '/*.js'),
@@ -19,6 +20,7 @@ var scripts = function () {
 
   return gulp.src(allScripts)
     .on('error', handleErrors)
+    .pipe(uglify())
     .pipe(concat('all.js'))
     .pipe(gulp.dest(paths.dest))
     .pipe(browserSync.stream());

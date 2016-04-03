@@ -6,6 +6,7 @@ var browserSync  = require('browser-sync')
 var handleErrors = require('../lib/handleErrors')
 var path         = require('path')
 var concat       = require('gulp-concat')
+var clean        = require('gulp-clean-css')
 
 var paths = {
   src: path.join(config.root.src, config.tasks.css.src, '/*.css'),
@@ -15,6 +16,7 @@ var paths = {
 var cssTask = function () {
   return gulp.src(paths.src)
     .on('error', handleErrors)
+    .pipe(clean({compatibility: 'ie8'}))
     .pipe(concat('all.css'))
     .pipe(gulp.dest(paths.dest))
     .pipe(browserSync.stream());
