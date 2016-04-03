@@ -5,6 +5,9 @@ var browserSync = require('browser-sync')
 var changed     = require('gulp-changed')
 var gulp        = require('gulp')
 var imagemin    = require('gulp-imagemin')
+var pngquant = require('imagemin-pngquant');
+var jpegtran = require('imagemin-jpegtran');
+var gifsicle = require('imagemin-gifsicle');
 var path        = require('path')
 
 var paths = {
@@ -14,8 +17,13 @@ var paths = {
 
 var imagesTask = function() {
   return gulp.src(paths.src)
-    .pipe(changed(paths.dest)) // Ignore unchanged files
-    .pipe(imagemin()) // Optimize
+    .pipe(
+      imagemin({
+	progressive: false,
+	svgoPlugins: [{removeViewBox: false}],
+	use: [pngquant(), jpegtran(), gifsicle()]
+      })
+    )
     .pipe(gulp.dest(paths.dest))
     .pipe(browserSync.stream())
 }
