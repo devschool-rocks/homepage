@@ -1541,6 +1541,7 @@
 
 @media (max-width: 479px) {
 
+  #slider { display: none; }
 	.container,
 	#header.full-header .container,
 	.container-fullwidth { width: 310px !important; }
