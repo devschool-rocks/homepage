@@ -332,7 +332,6 @@
 
 	#header-trigger,
 	.top-advert,
-	.header-extras { display: none; }
 
 	#logo {
 		display: block;
@@ -345,7 +344,8 @@
 		padding: 0 !important;
 	}
 
-	#logo a.standard-logo { display: inline-block; }
+
+	#logo a.standard-logo { display: inline-block;  }
 
 	#primary-menu {
 		display: block;
@@ -1124,7 +1124,7 @@
 	.col_four_fifth,
 	.col_one_sixth,
 	.col_five_sixth {
-		width: 100%;
+		width: 100% !important;
 		margin-right: 0;
 		float: none;
 		margin-bottom: 50px !important;
@@ -1541,7 +1541,9 @@
 
 @media (max-width: 479px) {
 
-  #slider { display: none; }
+        #header-wrap { background: #000 }
+        #slider { display: none; }
+
 	.container,
 	#header.full-header .container,
 	.container-fullwidth { width: 310px !important; }
