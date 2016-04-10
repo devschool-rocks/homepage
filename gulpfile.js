@@ -26,7 +26,7 @@ var collectPosts = function() {
 
   return through.obj(function (file, enc, cb) {
     posts.push(file.page);
-    posts[posts.length - 1].content = file.contents.toString();
+    posts[posts.length - 1].body = file.contents.toString();
     this.push(file);
     cb();
   },

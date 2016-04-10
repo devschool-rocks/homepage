@@ -4,7 +4,7 @@
 <article style="padding: 32px">
 {% for post in site.posts %}
   <h2>{{ post.title }}</h2>
-  {{ post.content|safe }}
+  {{ post.body|safe }}
 {% endfor %}
 </article>
 {% endblock %}

@@ -2,12 +2,12 @@
   <head>
     <script src="js/app.min.js"></script>
     <link rel="stylesheet" href="css/app.min.css">
-    <title>Devschool</title>
+    <title>{{ file.page.title }} | Devschool</title>
   </head>
   <body>
-    <h1>{{ file.meta.title }}</h1>
+    <h1>{{ file.page.title }}</h1>
     <article>
-      {{ contents }}
+      {{ file.page.body }}
     </article>
   </body>
 </html>
