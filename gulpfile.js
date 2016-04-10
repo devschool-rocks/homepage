@@ -14,7 +14,7 @@ var gulp   = require('gulp'),
     mDown  = require('gulp-markdown'),
     wrap   = require('gulp-wrap'),
     page   = require('gulp-front-matter'),
-    changed = require('gulp-changed'),
+   changed = require('gulp-changed'),
     imgMin = require('gulp-imagemin'),
     bower  = require('gulp-bower'),
     fs     = require('fs'),
@@ -26,7 +26,10 @@ var collectPosts = function() {
 
   return through.obj(function (file, enc, cb) {
     posts.push(file.page);
-    posts[posts.length - 1].body = file.contents.toString();
+    var post = posts[posts.length - 1];
+    post.body = file.contents.toString();
+    post.summary = summarize(file.contents.toString(), '<!--more-->');
+    post.permalink = file.path.split("src/")[1];
     this.push(file);
     cb();
   },
@@ -39,18 +42,13 @@ var collectPosts = function() {
   });
 }
 
-var summarize = function(marker) {
-  return through.obj(function (file, enc, cb) {
-    var contents = file.contents.toString();
-    if (contents.indexOf(marker) !== -1) {
-      var summary = contents.split(marker)[0];
-      if (summary) {
-        file.page.summary = summary;
-      }
+var summarize = function(contents, marker) {
+  if (contents.indexOf(marker) !== -1) {
+    var summary = contents.split(marker)[0];
+    if (summary) {
+      return summary;
     }
-    this.push(file);
-    cb();
-  });
+  }
 }
 
 // JS
@@ -100,7 +98,6 @@ gulp.task('blog', function() {
 return gulp.src(['src/blog/**/*.md'])
                                .pipe(page({property: "page", remove: true}))
                                .pipe(mDown())
-                               .pipe(summarize('<!--more-->'))
                                .pipe(collectPosts())
                                .pipe(wrap(function (data) {
                                return fs.readFileSync('src/blog/layout.nunjucks').toString()

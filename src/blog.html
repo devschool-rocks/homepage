@@ -3,7 +3,7 @@
 {% block body %}
 <article style="padding: 32px">
 {% for post in site.posts %}
-  <h2>{{ post.title }}</h2>
+<h2><a href="{{ post.permalink }}">{{ post.title }}</a></h2>
   {{ post.summary|safe }}
 {% endfor %}
 </article>
