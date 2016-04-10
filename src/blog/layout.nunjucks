@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <script src="js/app.min.js"></script>
+    <link rel="stylesheet" href="css/app.min.css">
+    <title>Devschool</title>
+  </head>
+  <body>
+    <h1>{{ file.meta.title }}</h1>
+    <article>
+      {{ contents }}
+    </article>
+  </body>
+</html>
