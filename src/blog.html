@@ -1,11 +1,19 @@
-{% extends 'layout.nunjucks' %}
+{% extends 'layout.html' %}
 
 {% block body %}
-<article style="padding: 32px">
-{% for post in site.posts %}
-<h2><a href="{{ post.permalink }}">{{ post.title }}</a></h2>
-  {{ post.summary|safe }}
-{% endfor %}
-</article>
+<section id="content" class="notopmargin">
+  <div class="container clearfix">
+    <div class="row clearfix">
+      <div class="col-md-8 col-md-offset-2">
+        <article style="padding: 32px">
+          {% for post in site.posts %}
+          <h2><a href="{{ post.permalink }}">{{ post.title }}</a></h2>
+          {{ post.summary|safe }}
+          {% endfor %}
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}
 

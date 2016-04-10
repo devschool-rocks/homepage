@@ -83,10 +83,10 @@ gulp.task('css', function () {
 
 // HTML
 gulp.task('html', function() {
-return gulp.src(['src/**/*.html', 'src/**/*.nunjucks'])
+return gulp.src(['src/**/*.html'])
                                            .pipe(data({site: site}))
                                            .pipe(render({
-                                           path: ['src/html']
+                                           path: ['src/templates']
                                            }))
                                            .pipe(minify({collapseWhitespace: true}))
                                            .pipe(gulp.dest('dist'))
@@ -100,7 +100,7 @@ return gulp.src(['src/blog/**/*.md'])
                                .pipe(mDown())
                                .pipe(collectPosts())
                                .pipe(wrap(function (data) {
-                               return fs.readFileSync('src/html/blog.nunjucks').toString()
+                               return fs.readFileSync('src/templates/blog.html').toString()
                                }, null, {engine: 'nunjucks'}))
                                .pipe(gulp.dest('dist'))
                                .pipe(reload({stream: true}));
@@ -126,7 +126,7 @@ gulp.task('sync', function() {
 gulp.task('watch', function() {
   gulp.watch('src/js/**/*.js', ['js']);
   gulp.watch('src/sass/**/*.scss', ['css']);
-  gulp.watch(['src/**/*.html', 'src/**/*.nunjucks'], ['html']);
+  gulp.watch(['src/**/*.html'], ['html']);
   gulp.watch(['src/blog/**/*'], ['blog']);
   gulp.watch('src/images/**/*', ['images']);
 });
