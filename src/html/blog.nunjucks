@@ -11,10 +11,47 @@
   </head>
   <body class="stretched avgrund-blur">
     <div id="wrapper" class="clearfix">
-      {% include "header.nunjucks" %}
-      {% block body %}{% endblock %}
-      <div id="gotoTop" class="icon-angle-up"></div>
+<header id="header" class="transparent-header full-header" data-sticky-class="not-dark">
+  <div id="header-wrap">
+    <div class="container clearfix">
+      <div id="logo" class="">
+	<a href="/" class="standard-logo" data-dark-logo="/images/logo-dark.png"><img src="/images/logo.png" alt="Devschool, online coding bootcamp"></a>
+	<a href="/" class="retina-logo" data-dark-logo="/images/logo-dark@2x.png"><img src="/images/logo@2x.png" alt="Learn to code online in our coding bootcamp"></a>
+      </div>
+
+      <nav id="primary-menu" class="dark">
+<ul>
+  <li><a href="/"><div>home</div></a>
+  <li class="current"><a href="/blog.html"><div>blog</div></a>
+</ul>
+	<div id="top-search" class="hidden-xs hidden-sm">
+	  <a class="rightmargin" src="/#apply">APPLY</a>
+	</div>
+      </nav>
+
     </div>
+  </div>
+</header>
+
+
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div class="row clearfix">
+      <div class="col-md-8 col-md-offset-2">
+
+        <article>
+          <div class="heading-block topmargin">
+            <h1>{{ file.page.title }}</h1>
+          </div>
+
+          {{ file.page.body|safe }}
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
 
     <noscript>We are sorry, but you have turned off your JavaScript and therefore you cannot use this website.</noscript>
 

@@ -1,4 +1,4 @@
 <ul>
-  <li class="current"><a href="index.html"><div>home</div></a>
+  <li><a href="index.html"><div>home</div></a>
   <li><a href="blog.html"><div>blog</div></a>
 </ul>
