@@ -1,7 +1,6 @@
 ---
 title: An Example Blog Post
 author: Jim OKelly
-tags: example, sample
 ---
 
 > this is just a blockquote
