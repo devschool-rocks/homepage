@@ -7,7 +7,11 @@
       <script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <![endif]-->
 
-    <title>Devschool</title>
+    <title>{% block title %}Coding Bootcamp and Developer School | Learn to Code @ Devschool!{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}Devschool will take you from newbie to paid web developer{% endblock %}">
+    <link rel="canonical" href="{% block canonical %}https://devschool.rocks/{{ file.page.permalink }}{% endblock %}" />
+
+    <title>{{ file.page.title }} | Devschool</title>
   </head>
   <body class="stretched avgrund-blur">
     <div id="wrapper" class="clearfix">
@@ -25,7 +29,7 @@
   <li class="current"><a href="/blog.html"><div>blog</div></a>
 </ul>
 	<div id="top-search" class="hidden-xs hidden-sm">
-	  <a class="rightmargin" src="/#apply">APPLY</a>
+	  <a class="rightmargin" href="/#applySection">APPLY</a>
 	</div>
       </nav>
 
@@ -41,6 +45,10 @@
       <article>
         <div class="heading-block topmargin">
           <h1>{{ file.page.title }}</h1>
+        </div>
+        <div class="meta margintop marginbottom">
+          <div class="author">By: {{ file.page.author }}</div>
+          <div class="publishedOn">On: {{ file.page.publishedOn }}</div>
         </div>
 
         {{ file.page.body|safe }}

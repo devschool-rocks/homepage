@@ -378,7 +378,7 @@ span.middot {
 }
 
 .bgcolor,
-.bgcolor #header-wrap { background-color: #F4494D !important; }
+.bgcolor #header-wrap { background-color: #1173C7 !important; }
 
 .color { color: #F4494D !important; }
 
@@ -13084,4 +13084,23 @@ body:not(.no-transition) #wrapper,
   width:100%;
   background: #000;
   display: none;
+}
+
+article {
+  margin: 24px 0 24px 0;
+  padding: 24px 0 24px 0;
+  border-bottom: 1px solid #eee;
+}
+
+aside {
+  margin: 42px 0;
+}
+
+.dark .button.button-border:not(.button-light):hover {
+    color: #FFFEFA !important;
+    background-color: #C71313 !important;
+}
+button.joinNowBtn {
+    background-color: #F3C30C !important;
+    color: 000 !important;
 }

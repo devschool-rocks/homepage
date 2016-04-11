@@ -1,19 +1,29 @@
 {% extends 'layout.html' %}
 
+{% block title %}The Devschool blog, read about out online coding bootcamp!{% endblock %}
+{% block meta_description %}Devschool will take you from newbie to paid web developer{% endblock %}
+{% block canonical %}https://devschool.rocks/blog.html{% endblock %}
+
+{% block logo %}
+<a href="/" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo.png" alt="Devschool, online coding bootcamp"></a>
+<a href="/" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Learn to code online in our coding bootcamp"></a>
+{% endblock %}
+
 {% block body %}
-<section id="content" class="notopmargin">
-  <div class="container clearfix">
-    <div class="row clearfix">
-      <div class="col-md-8 col-md-offset-2">
-        <article style="padding: 32px">
-          {% for post in site.posts %}
-          <h2><a href="{{ post.permalink }}">{{ post.title }}</a></h2>
-          {{ post.summary|safe }}
-          {% endfor %}
-        </article>
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      {% for post in site.posts %}
+      <article style="padding: 32px">
+        <h2><a href="{{ post.permalink }}">{{ post.title }}</a></h2>
+        <div class="author">By: {{ post.author }}</div>
+        <div class="publishedOn">On: {{ post.publishedOn }}</div>
+        {{ post.summary|safe }}
+        <a href="{{ post.permalink }}">Continue reading this article article</a>
+      </article>
+      {% endfor %}
     </div>
   </div>
-</section>
+</div>
 {% endblock %}
 
