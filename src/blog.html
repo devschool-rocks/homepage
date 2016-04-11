@@ -27,3 +27,15 @@
 </div>
 {% endblock %}
 
+{% block reviews %}
+{% for review in site.reviews %}
+<div class="slide">
+  <div class="testi-content">
+    <p>{{ review.body }}</p>
+    <div class="testi-meta">
+      {{ review.name }}
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

@@ -20,6 +20,20 @@ var gulp   = require('gulp'),
     bSync  = require('browser-sync'),
     reload = bSync.reload;
 
+var collectReviews = function() {
+  var reviews = [];
+
+  return through.obj(function (file, enc, cb) {
+    reviews.push(file.page);
+    var review    = reviews[reviews.length - 1];
+    review.body   = file.contents.toString();
+    cb();
+  },
+  function (cb) {
+    site.reviews = reviews;
+    cb();
+  });
+}
 
 var collectPosts = function() {
   var posts = [];
@@ -107,6 +121,14 @@ gulp.task('blog', function() {
              .pipe(reload({stream: true}));
 });
 
+// REVIEWS
+gulp.task('reviews', function() {
+  return gulp.src(['src/reviews/*.md'])
+             .pipe(page({property: "page", remove: true}))
+             .pipe(collectReviews())
+             .pipe(reload({stream: true}));
+});
+
 // BOWER
 gulp.task('bower', function() { 
   return bower().pipe(gulp.dest('bower_components')) 
@@ -128,7 +150,8 @@ gulp.task('watch', function() {
   gulp.watch('src/sass/**/*.scss', ['css']);
   gulp.watch(['src/**/*.html'], ['blog', 'html']);
   gulp.watch(['src/blog/**/*'], ['blog', 'html']);
+  gulp.watch(['src/reviews/*'], ['reviews']);
   gulp.watch('src/images/**/*', ['images']);
 });
 
-gulp.task('default', ['js', 'css', 'images', 'blog', 'html', 'bower', 'fonts', 'sync', 'watch']);
+gulp.task('default', ['reviews', 'js', 'css', 'images', 'blog', 'html', 'bower', 'fonts', 'sync', 'watch']);
