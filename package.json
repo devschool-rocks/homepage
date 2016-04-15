@@ -10,5 +10,8 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:devschool-rocks/homepage.git"
+  },
+  "devDependencies": {
+    "paths": "^0.1.1"
   }
 }

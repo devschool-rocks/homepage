@@ -155,7 +155,7 @@ gulp.task('fonts', function() { 
 
 gulp.task('static', ['js', 'css', 'images', 'html', 'fonts'], function() {
   return gulp.src("src/static/**/*")
-             .pipe(changed(paths.dest))
+             .pipe(changed('dist'))
              .pipe(gulp.dest('dist'));
 });
 
@@ -165,11 +165,11 @@ gulp.task("clean", function(cb) {
   });
 });
 
-gulp.task("production", ['production'], function(cb) {
+gulp.task("production", function(cb) {
   sequence('clean', ['reviews', 'blog', 'static'], cb)
 });
 
-gulp.task("deploy", function() {
+gulp.task("deploy", ['production'], function() {
   return gulp.src("dist/**/*")
              .pipe(ghPages(settings.ghPages))
              .on('end', function(){
