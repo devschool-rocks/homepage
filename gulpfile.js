@@ -3,7 +3,13 @@ site.time       = new Date();
 
 var gulp   = require('gulp'),
     uglify = require('gulp-uglify'),
+       del = require('del'),
+      open = require('open'),
+      path = require('path'),
+        os = require('os'),
    through = require('through2'),
+   ghPages = require('gulp-gh-pages'),
+  sequence = require('gulp-sequence')
     data   = require('gulp-data'),
     concat = require('gulp-concat'),
     sass   = require('gulp-sass'),
@@ -19,6 +25,14 @@ var gulp   = require('gulp'),
     fs     = require('fs'),
     bSync  = require('browser-sync'),
     reload = bSync.reload;
+
+var settings = {
+  url: 'https://devschool.rocks',
+  src: path.join('dist', '/**/*'),
+  ghPages: {
+    cacheDir: path.join(os.tmpdir(), 'devschool-web')
+  }
+}
 
 var collectReviews = function() {
   var reviews = [];
@@ -137,6 +151,30 @@ gulp.task('bower', function() { 
 gulp.task('fonts', function() { 
   return gulp.src(['bower_components/font-awesome/fonts/**.*', 'src/fonts/**/*']) 
              .pipe(gulp.dest('./dist/fonts')); 
+});
+
+gulp.task('static', ['js', 'css', 'images', 'html', 'fonts'], function() {
+  return gulp.src("src/static/**/*")
+             .pipe(changed(paths.dest))
+             .pipe(gulp.dest('dist'));
+});
+
+gulp.task("clean", function(cb) {
+  del('dist').then(function(paths) {
+    cb();
+  });
+});
+
+gulp.task("production", ['production'], function(cb) {
+  sequence('clean', ['reviews', 'blog', 'static'], cb)
+});
+
+gulp.task("deploy", function() {
+  return gulp.src("dist/**/*")
+             .pipe(ghPages(settings.ghPages))
+             .on('end', function(){
+               open(settings.url)
+            });
 });
 
 // BROWSER SYNC

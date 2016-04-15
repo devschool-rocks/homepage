@@ -1,0 +1,14 @@
+{
+  "name": "devschool",
+  "version": "0.0.1",
+  "description": "Devschool website powered by gulp",
+  "engines": {
+    "node": "4.2.4",
+    "npm": "2.14.12"
+  },
+  "homepage": "https://devschool.rocks",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:devschool-rocks/homepage.git"
+  }
+}
