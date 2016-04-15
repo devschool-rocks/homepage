@@ -1,4 +1,0 @@
-User-Agent: *
-Disallow: /terms.html
-Disallow: /privcacy.html
-Sitemap: https://devschool.rocks/sitemap.xml
