@@ -2,7 +2,7 @@
   <head>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/app.min.css">
-    <link href="//fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Arvo:400,600,800" rel="stylesheet" type="text/css" />
+    <link href="//fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Arvo:400,600,800" rel="stylesheet" type="text/css">
     <!--[if lt IE 9]>
       <script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <![endif]-->
@@ -23,11 +23,10 @@
 
 	    <nav id="primary-menu" class="dark">
 	      <ul>
-		<li><a href="/"><div>home</div></a>
-		  <li><a href="/blog.html"><div>blog</div></a>
+                {% block menu %}{% endblock %}
 	      </ul>
 	      <div id="top-search" class="hidden-xs hidden-sm">
-                <button class="btn btn-primary norightmargin">APPLY</button>
+		<div id="applyBtn" class="button button-border button-dark button-rounded button-mini noleftmargin ">APPLY</div>
 	      </div>
 	    </nav>
 

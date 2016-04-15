@@ -1,6 +1,7 @@
 ---
 title: The Devschool Difference - Humans First
 author: Jim OKelly
+tags: about us
 ---
 ### We aren't "just another coding bootcamp"
 

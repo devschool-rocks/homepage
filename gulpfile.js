@@ -148,10 +148,10 @@ gulp.task('sync', function() {
 gulp.task('watch', function() {
   gulp.watch('src/js/**/*.js', ['js']);
   gulp.watch('src/sass/**/*.scss', ['css']);
-  gulp.watch(['src/**/*.html'], ['blog', 'html']);
+  gulp.watch(['src/**/*.html'], ['html', 'blog']);
   gulp.watch(['src/blog/**/*'], ['blog', 'html']);
   gulp.watch(['src/reviews/*'], ['reviews']);
   gulp.watch('src/images/**/*', ['images']);
 });
 
-gulp.task('default', ['reviews', 'js', 'css', 'images', 'blog', 'html', 'bower', 'fonts', 'sync', 'watch']);
+gulp.task('default', ['reviews', 'blog', 'js', 'css', 'images', 'html', 'bower', 'fonts', 'sync', 'watch']);
