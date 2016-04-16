@@ -24,10 +24,10 @@
               <a href="/" class="retina-logo" data-dark-logo="/images/logo-dark@2x.png"><img src="/images/logo@2x.png" alt="Learn to code online in our coding bootcamp"></a>
             </div>
 
-            <nav id="primary-menu" class="dark">
+            <nav id="primary-menu">
               <ul>
-                <li><a href="/"><div>home</div></a>
-                  <li class="current"><a href="/blog.html"><div>blog</div></a>
+                <li><a href="/"><div>CODING BOOTCAMP</div></a></li>
+                <li><a href="/blog.html"><div>THE BLOG</div></a></li>
               </ul>
               <div id="top-search" class="hidden-xs hidden-sm">
                 <a class="rightmargin" href="/#applySection">APPLY</a>
@@ -37,8 +37,6 @@
           </div>
         </div>
       </header>
-
-
 
       <section id="content" style="margin-bottom: 0px;">
         <div class="content-wrap">
@@ -71,7 +69,7 @@
                   <div class="author-image">
                     <img src="/images/authors/{{ file.page.author | lower | replace(" ", "-") }}.png" alt="" class="">
                   </div>
-                  BIO HERE
+                  <div data-author-name="{{ file.page.author | lower | replace(" ", "-") }}" id="blog_author_bio"></div>
                 </div>
               </div>
             </article>

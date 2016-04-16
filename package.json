@@ -12,6 +12,8 @@
     "url": "git@github.com:devschool-rocks/homepage.git"
   },
   "devDependencies": {
+    "gulp-load-plugins": "^1.2.2",
+    "gulp-server-livereload": "^1.7.4",
     "paths": "^0.1.1"
   }
 }

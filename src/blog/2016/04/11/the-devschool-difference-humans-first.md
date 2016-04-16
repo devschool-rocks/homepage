@@ -9,7 +9,7 @@ When I coined the term "Big Box Bootcamp" I wasn't talking about the size of a d
 
 You see, [after several years of privately mentoring hundreds of students](https://codementor.io/devschool), I was drawing conclusions about the quality, or more correctly, the lack of quality in these online and in-person coding bootcamps popping up everywhere and they weren't pretty.
 
-Since I fancy myself as a bit of a Ralph Nader type, it really started to piss me off that students where spending upwards of $20,000 of either their family's money, or worse, their own future savings - and at the same time to have to meet with me several times a week for a hundred an hour for private code mentoring and tutoring.
+Since I fancy myself as a bit of a Bernie Sanders/Ralph Nader type, it really started to piss me off that students where spending upwards of $20,000 of either their family's money, or worse, their own future savings - and at the same time to have to meet with me several times a week for a hundred an hour for private code mentoring and tutoring.
 
 <!--more-->
 

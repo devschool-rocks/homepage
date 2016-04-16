@@ -9,6 +9,14 @@ $.fn.doOnce = function( func ) {
   return this;
 }
 
+$(document).ready(function() {
+  var authorName = $("#blog_author_bio").data('author-name');
+  if (authorName == undefined) { return; }
+  var bio = $.getJSON( "/data/authors/"+authorName+".json", function( data ) {
+    $("#blog_author_bio").html(data['bio']);
+  });
+});
+
 if( $().infinitescroll ) {
 
   $.extend($.infinitescroll.prototype,{
