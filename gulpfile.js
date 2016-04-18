@@ -154,12 +154,12 @@
   });
 
   gulp.task('production', function(cb) {
-    sequence('clean', ['images', 'reviews', 'static'], cb);
+    plugins.sequence('clean', ['reviews', 'static', 'bower', 'fonts'], cb);
   });
 
   gulp.task('deploy', [], function() {
     return gulp.src('dist/**/*')
-              .pipe(ghPages(settings.ghPages))
+              .pipe(plugins.ghPages(settings.ghPages))
               .on('end', function(){
                 open(settings.url);
               });
