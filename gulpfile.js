@@ -154,7 +154,7 @@
   });
 
   gulp.task('production', function(cb) {
-    plugins.sequence('clean', ['reviews', 'static', 'bower', 'fonts'], cb);
+    plugins.sequence('clean', ['images', 'reviews', 'static', 'bower', 'fonts'], cb);
   });
 
   gulp.task('deploy', [], function() {
