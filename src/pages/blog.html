@@ -15,20 +15,28 @@
 {% endblock %}
 
 {% block body %}
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      {% for post in site.posts %}
-      <article style="padding: 32px">
-        <h2><a href="{{ post.permalink }}">{{ post.title }}</a></h2>
-        <div class="author">By: {{ post.author }}</div>
-        <div class="publishedOn">On: {{ post.publishedOn }}</div>
+<div class="content-wrap">
+<div class="container clearfix">
+  <div id="posts" class="post-grid grid-container post-masonry clearfix">
+    {% for post in site.posts %}
+    <div class="entry clearfix">
+      <div class="entry-image">
+        <a data-lightbox="image" href="{{ post.permalink }}">
+	  <img class="image_fade" src="/images/blog/{{ post.publishedOn }}/{{ post.title | lower | replace(' ', '-') }}.jpg" alt="{{ post.title }}"></a>
+      </div>
+      <ul class="entry-meta clearfix">
+	<li><i class="icon-calendar3"></i> {{ post.publishedOn }}</li>
+	<li><i class="icon-folder-open"></i> {{ post.tags }}</li>
+      </ul>
+      <div class="entry-content">
+        <h3><a href="{{ post.permalink }}">{{ post.title }}</a></h3>
         {{ post.summary|safe }}
         <a href="{{ post.permalink }}">Continue reading this article article</a>
-      </article>
-      {% endfor %}
+      </div>
     </div>
+    {% endfor %}
   </div>
+</div>
 </div>
 {% endblock %}
 

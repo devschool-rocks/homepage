@@ -1,13 +1,12 @@
 <html>
   <head>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/app.min.css">
     <link href="//fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Arvo:400,600,800" rel="stylesheet" type="text/css">
     <!--[if lt IE 9]>
       <script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <![endif]-->
 
-    <title>{% block title %}Coding Bootcamp and Developer School | Learn to Code @ Devschool!{% endblock %}</title>
     <meta name="description" content="{% block meta_description %}Devschool will take you from newbie to paid web developer{% endblock %}">
     <link rel="canonical" href="{% block canonical %}https://devschool.rocks/{{ file.page.permalink }}{% endblock %}" />
 
@@ -26,8 +25,8 @@
 
             <nav id="primary-menu">
               <ul>
-                <li><a href="/"><div>CODING BOOTCAMP</div></a></li>
-                <li><a href="/blog.html"><div>THE BLOG</div></a></li>
+                <li><a href="/">CODING BOOTCAMP</a></li>
+                <li><a href="/blog.html">THE BLOG</a></li>
               </ul>
               <div id="top-search" class="hidden-xs hidden-sm">
                 <a class="rightmargin" href="/#applySection">APPLY</a>
@@ -49,12 +48,12 @@
 
                 <ul class="entry-meta clearfix">
                   <li><i class="icon-calendar3"></i> {{ file.page.publishedOn }}</li>
-                  <li><a href="#"><i class="icon-user"></i> {{ file.page.author }}</a></li>
+                  <li><a href="https://codementor.io/devschool" target="_blank"><i class="icon-user"></i> {{ file.page.author }}</a></li>
                   <li><i class="icon-folder-open"></i> {{ file.page.tags }}</li>
                 </ul>
 
                 <div class="entry-image">
-                  <a href="#"><img src="/images/blog/{{ file.page.publishedOn }}/{{ file.page.title | lower | replace(' ', '-') }}.jpg" alt="{{ file.page.title }}"></a>
+                  <img src="/images/blog/{{ file.page.publishedOn }}/{{ file.page.title | lower | replace(' ', '-') }}.jpg" alt="{{ file.page.title }}">
                 </div>
 
                 {{ file.page.body|safe }}
@@ -63,24 +62,25 @@
 
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Published by <span><a href="/authors/{{ file.page.author | lower | replace(" ", "-") }}.html">{{ file.page.author }}</a></span></h3>
+                  <h3 class="panel-title">Published by <span><a href="https://codementor.io/devschool" target="_blank">{{ file.page.author }}</a></span></h3>
                 </div>
                 <div class="panel-body">
                   <div class="author-image">
-                    <img src="/images/authors/{{ file.page.author | lower | replace(" ", "-") }}.png" alt="" class="">
+                    <img src="/images/authors/{{ file.page.author | lower | replace(' ', '-') }}.png" alt="" class="">
                   </div>
-                  <div data-author-name="{{ file.page.author | lower | replace(" ", "-") }}" id="blog_author_bio"></div>
+                  <div data-author-name="{{ file.page.author | lower | replace(' ', '-') }}" id="blog_author_bio"></div>
                 </div>
               </div>
             </article>
           </div>
         </div>
       </section>
+    </div>
 
-      <noscript>We are sorry, but you have turned off your JavaScript and therefore you cannot use this website.</noscript>
+    <noscript>We are sorry, but you have turned off your JavaScript and therefore you cannot use this website.</noscript>
 
-      <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-      <script src="/js/app.min.js"></script>
+    <script   src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="/js/app.min.js"></script>
   </body>
 </html>

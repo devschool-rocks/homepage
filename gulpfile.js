@@ -3,7 +3,7 @@
   site.time       = new Date();
 
   var gulp    = require('gulp');
-  var plugin  = require('gulp-load-plugins');
+  var plugins = require('gulp-load-plugins')();
   var del     = require('del');
   var open    = require('open');
   var path    = require('path');
@@ -51,7 +51,7 @@
     },
     function (cb) {
       posts.sort(function (a, b) {
-        return b.date - a.date;
+        return Date.parse(b.publishedOn) - Date.parse(a.publishedOn);
       });
       site.posts = posts;
       cb();
@@ -70,10 +70,10 @@
   // JS
   gulp.task('js', function() {
     return gulp.src(['src/js/**/*.js'])
-              .pipe(sMaps.init())
-              .pipe(concat('app.min.js'))
-              .pipe(uglify())
-              .pipe(sMaps.write())
+              .pipe(plugins.sourcemaps.init())
+              .pipe(plugins.concat('app.min.js'))
+              .pipe(plugins.uglify())
+              .pipe(plugins.sourcemaps.write())
               .pipe(gulp.dest('dist/js'))
               .pipe(reload({stream: true}));
   });
@@ -81,17 +81,17 @@
   // IMAGES
   gulp.task('images', function() {
   gulp.src('src/images/**/*')
-      .pipe(imgMin())
+      .pipe(plugins.imagemin())
       .pipe(gulp.dest('dist/images'));
   });
 
   // SCSS
   gulp.task('css', function () {
     return gulp.src(['src/sass/**/*.scss'])
-              .pipe(sMaps.init())
-              .pipe(concat('app.min.css'))
-              .pipe(sass({outputStyle: 'compressed', errLogToConsole: true}))
-              .pipe(sMaps.write())
+              .pipe(plugins.sourcemaps.init())
+              .pipe(plugins.concat('app.min.css'))
+              .pipe(plugins.sass({outputStyle: 'compressed', errLogToConsole: true}))
+              .pipe(plugins.sourcemaps.write())
               .pipe(gulp.dest('dist/css'))
               .pipe(reload({stream: true}));
   });
@@ -100,11 +100,11 @@
   // HTML
   gulp.task('pages', ['blog'], function() {
     var stream = gulp.src(['src/pages/**/*.html'])
-                    .pipe(data({site: site}))
-                    .pipe(render({
+                    .pipe(plugins.data({site: site}))
+                    .pipe(plugins.nunjucksRender({
                       path: ['src/templates']
                     }))
-                    .pipe(minify({collapseWhitespace: true}))
+                    .pipe(plugins.htmlmin({collapseWhitespace: true}))
                     .pipe(gulp.dest('dist'))
                     .pipe(reload({stream: true}));
     return stream;
@@ -113,10 +113,10 @@
   // Markdown
   gulp.task('blog', function(cb) {
     var stream = gulp.src(['src/blog/**/*.md'])
-                    .pipe(page({property: 'page', remove: true}))
-                    .pipe(mDown())
+                    .pipe(plugins.frontMatter({property: 'page', remove: true}))
+                    .pipe(plugins.markdown())
                     .pipe(collectPosts())
-                    .pipe(wrap(function (data) {
+                    .pipe(plugins.wrap(function (data) {
                       return fs.readFileSync('src/templates/blog.html').toString();
                     }, null, {engine: 'nunjucks'}))
                     .pipe(gulp.dest('dist'))
@@ -126,13 +126,13 @@
 
   // BOWER
   gulp.task('bower', function() {
-    return bower().pipe(gulp.dest('bower_components'));
+    return plugins.bower().pipe(gulp.dest('bower_components'));
   });
 
   // REVIEWS
   gulp.task('reviews', function() {
     return gulp.src(['src/reviews/*.md'])
-              .pipe(page({property: 'page', remove: true}))
+              .pipe(plugins.frontMatter({property: 'page', remove: true}))
               .pipe(collectReviews())
               .pipe(reload({stream: true}));
   });
@@ -180,5 +180,5 @@
     gulp.watch('src/images/**/*', ['images']);
   });
 
-  gulp.task('default', ['reviews', 'static', 'bower', 'fonts', 'sync', 'watch']);
+  gulp.task('default', plugins.sequence(['reviews', 'static', 'bower', 'fonts'], 'sync', 'watch'));
 })();
