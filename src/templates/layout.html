@@ -9,6 +9,7 @@
 
     <title>{% block title %}Online Coding Bootcamp / Developer School | Learn to Code @ Devschool!{% endblock %}</title>
     <meta name="description" content="{% block meta_description %}Learn to code from expert mentors in our coding bootcamp online, building real world applications! We don't just train you, we guarantee a job!{% endblock %}">
+    {% include '_app-icons.html' %}
   
     <link rel="canonical" href="{% block canonical %}https://devschool.rocks{% endblock %}" />
 
@@ -16,25 +17,21 @@
   <body class="stretched avgrund-blur">
     <div id="wrapper" class="clearfix">
       <header id="header" class="transparent-header full-header" data-sticky-class="not-dark">
-        <div id="header-wrap">
-          <div class="container clearfix">
-            <div id="logo" class="">
-              {% block logo %}{% endblock %}
-            </div>
+	<div id="header-wrap">
+	  <div class="container clearfix">
+	    <div id="logo" class="">
+	      {% block logo %}{% endblock %}
+	    </div>
 
-            <nav id="primary-menu" class="dark">
-              <ul>
-                {% block menu %}{% endblock %}
-              </ul>
-              <div id="top-search" class="hidden-xs hidden-sm">
-                <div id="applyBtn" class="button button-border button-dark button-rounded button-mini noleftmargin ">APPLY</div>
-              </div>
-            </nav>
+	    <nav id="primary-menu" class="dark">
+	      <ul>
+		{% block menu %}{% endblock %}
+	      </ul>
+	    </nav>
 
-          </div>
-        </div>
+	  </div>
+	</div>
       </header>
-
       {% block body %}{% endblock %}
       {% include '_footer.html' %}
 

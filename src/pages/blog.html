@@ -2,11 +2,11 @@
 
 {% block title %}The Devschool blog, read about out online coding bootcamp!{% endblock %}
 {% block meta_description %}Devschool will take you from newbie to paid web developer{% endblock %}
-{% block canonical %}https://devschool.rocks/blog.html{% endblock %}
+{% block canonical %}https://devschool.rocks/blog{% endblock %}
 
 {% block menu %}
 <li><a href="/"><div>CODING BOOTCAMP</div></a></li>
-<li><a class="active" href="/blog.html"><div>THE BLOG</div></a></li>
+<li><a class="active" href="/blog"><div>THE BLOG</div></a></li>
 {% endblock %}
 
 {% block logo %}
@@ -22,7 +22,7 @@
     <div class="entry clearfix">
       <div class="entry-image">
         <a data-lightbox="image" href="{{ post.permalink }}">
-	  <img class="image_fade" src="/images/blog/{{ post.publishedOn }}/{{ post.title | lower | replace(' ', '-') }}.jpg" alt="{{ post.title }}"></a>
+	  <img class="image_fade" src="/images/blog/{{ post.title | lower | replace(' ', '-') }}.jpg" alt="{{ post.title }}"></a>
       </div>
       <ul class="entry-meta clearfix">
 	<li><i class="icon-calendar3"></i> {{ post.publishedOn }}</li>

@@ -2,4 +2,4 @@
 name: Jorge Madrid
 ---
 
-The reason I chose the Devschool is that it is not really a bootcamp as we usually understand the word - it is a mentorship mixed with a friendship and strong community. Exactly what I needed: build a real world projects of my choice using tools I want or which are really in trend today.
+I took a coding bootcamp in Columbia first, but I missed a lot of key topics and was left with almost more questions than answers. My Devschool instructor filled those gaps, and took the time to answer my questions and now I have my dream job!

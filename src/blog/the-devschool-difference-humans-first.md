@@ -2,6 +2,7 @@
 title: The Devschool Difference - Humans First
 author: Jim OKelly
 tags: about us
+publishedOn: 2016/04/12
 ---
 
 When I coined the term "Big Box Bootcamp" I wasn't talking about the size of a development school, or coding bootcamp. Instead I was referring far more to the way students are shuffled through the system with little personal attention and even less deviation from the school's recipe.

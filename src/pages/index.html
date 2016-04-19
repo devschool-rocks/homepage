@@ -9,12 +9,12 @@
 <li><a data-scrollto="#pricing" data-offset="30" href="#pricing"><div>PRICING</div></a></li>
 <li><a data-scrollto="#learn" data-offset="30" href="#learn"><div>CURRICULUM</div></a></li>
 <li><a data-scrollto="#guarantee" data-offset="60" href="#guarantee"><div>100% HIRE RATE</div></a></li>
-<li><a href="/blog.html"><div>THE BLOG</div></a></li>
+<li><a href="/blog"><div>THE BLOG</div></a></li>
 {% endblock %}
 
 {% block logo %}
-  <a href="/" class="standard-logo" data-dark-logo="/images/logo-dark.png"><img src="images/logo.png" alt="Devschool, online coding bootcamp"></a>
-  <a href="/" class="retina-logo" data-dark-logo="/images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Learn to code online in our coding bootcamp"></a>
+  <a href="/" class="standard-logo" data-dark-logo="/images/logo-dark.png"><img src="/images/logo.png" alt="Devschool, online coding bootcamp"></a>
+  <a href="/" class="retina-logo" data-dark-logo="/images/logo-dark@2x.png"><img src="/images/logo@2x.png" alt="Learn to code online in our coding bootcamp"></a>
 {% endblock %}
 
 {% block body %}
@@ -64,48 +64,46 @@
 <section id="pricing" class="section parallax pricing-section notopmargin nomargin dark" style="background-image: url('/images/bg_black_vinyl.jpg');">
   <div class="container clearfix">
     <h2 class="pricing-section--title center">CHOOSE YOUR ADVENTURE</h2>
-    <h3 class="pricing-section--title center">Or mix -n- match the two!</h3>
+    <h3 class="pricing-section--title center">Learn to code, change your life</h3>
     <div class="pricing-section--price center">
-      <span class="pricing--currency">$</span>5,988<span class="pricing--period">USD</span></div>
+      <span class="pricing--currency">only $</span>7,500<span class="pricing--period">USD</span></div>
     <div class="pricing">
       <div class="pricing--item pricing">
 	<h3 class="pricing--title">JavaScript</h3>
 	<p class="pricing--sentence">One Script to Rule Them All</p>
 	<h5>JavaScript is an incredibly powerful language to build websites with</h5>
-	<ul class="pricing--feature-list">
-	  <li class="pricing--feature"><span class="icon icon-tv"></span>50 Private Mentor Lessons</li>
-	  <li class="pricing--feature"><span class="icon icon-line2-hourglass"></span>650 Course Hours</li>
-	  <li class="pricing--feature"><span class="icon icon-line2-rocket"></span>We guarantee your job</li>
-	  <li class="pricing--feature"><span class="icon icon-comment-alt"></span>Classroom chat via #Slack</li>
-	  <li class="pricing--feature"><span class="icon icon-support"></span>Get live, expert help</li>
-	  <li class="pricing--feature"><span class="icon icon-video"></span>Save and rewatch your lessons</li>
-	</ul>
+        {% include '_features.html' %}
       </div>
       <div class="pricing--item">
 	<h3 class="pricing--title">Ruby</h3>
 	<p class="pricing--sentence">Optimized for Developer Joy</p>
 	<h5>Rapidly prototype and build web applications with databases</h5>
-	<ul class="pricing--feature-list">
-	  <li class="pricing--feature"><span class="icon icon-tv"></span>50 Private Mentor Lessons</li>
-	  <li class="pricing--feature"><span class="icon icon-line2-hourglass"></span>650 Course Hours</li>
-	  <li class="pricing--feature"><span class="icon icon-line2-rocket"></span>We guarantee your job</li>
-	  <li class="pricing--feature"><span class="icon icon-comment-alt"></span>Classroom chat via #Slack</li>
-	  <li class="pricing--feature"><span class="icon icon-support"></span>Get live, expert help</li>
-	  <li class="pricing--feature"><span class="icon icon-video"></span>Save and rewatch your lessons</li>
-	</ul>
+        {% include '_features.html' %}
       </div>
     </div>
     <div class="center">
       <h3>Study Awesome Electives!</h3>
       <ul class="list-inline electives">
 	<li>Search Engine Optimization</li>
-	<li>Logo Design</li>
-	<li>Fontography</li>
-	<li>Databases</li>
-	<li>Devops</li>
+	<li>Logo Design &amp; Fontography</li>
+	<li>Database Architechure</li>
+	<li>Gulp &amp; Webpack</li>
 	<li>Test Driven Development</li>
 	<li>Functional Programming</li>
 	<li>Project Management</li>
+	<li>Shell Scripting</li>
+	<li>Devops and AWS</li>
+      </ul>
+    </div>
+    <div class="center">
+      <h3>Things Our Students Build!</h3>
+      <ul class="list-inline example-apps">
+	<li>Foreign Language Trainer</li>
+	<li>Small Farm Management</li>
+	<li>Online Storefronts</li>
+	<li>Band Booking Management</li>
+	<li>Equal Opportunity Wedding Planner</li>
+	<li>Lobbyist/Senator Payment Tracking</li>
       </ul>
     </div>
   </div>

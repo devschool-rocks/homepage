@@ -9,34 +9,30 @@
 
     <meta name="description" content="{% block meta_description %}Devschool will take you from newbie to paid web developer{% endblock %}">
     <link rel="canonical" href="{% block canonical %}https://devschool.rocks/{{ file.page.permalink }}{% endblock %}" />
+    {% include 'src/templates/_app-icons.html' %}
 
     <title>{{ file.page.title }} | Devschool</title>
   </head>
 
   <body class="stretched device-lg">
     <div id="wrapper" class="clearfix">
-      <header id="header" class="transparent-header full-header" data-sticky-class="not-dark">
-        <div id="header-wrap">
-          <div class="container clearfix">
-            <div id="logo" class="">
-              <a href="/" class="standard-logo" data-dark-logo="/images/logo-dark.png"><img src="/images/logo.png" alt="Devschool, online coding bootcamp"></a>
-              <a href="/" class="retina-logo" data-dark-logo="/images/logo-dark@2x.png"><img src="/images/logo@2x.png" alt="Learn to code online in our coding bootcamp"></a>
-            </div>
 
-            <nav id="primary-menu">
-              <ul>
-                <li><a href="/">CODING BOOTCAMP</a></li>
-                <li><a href="/blog.html">THE BLOG</a></li>
-              </ul>
-              <div id="top-search" class="hidden-xs hidden-sm">
-                <a class="rightmargin" href="/#applySection">APPLY</a>
-              </div>
-            </nav>
+<header id="header" class="transparent-header full-header" data-sticky-class="not-dark">
+  <div id="header-wrap">
+    <div class="container clearfix">
+      <div id="logo" class="">
+        {% block logo %}{% endblock %}
+      </div>
 
-          </div>
-        </div>
-      </header>
+      <nav id="primary-menu" class="dark">
+        <ul>
+          {% block menu %}{% endblock %}
+        </ul>
+      </nav>
 
+    </div>
+  </div>
+</header>
       <section id="content" style="margin-bottom: 0px;">
         <div class="content-wrap">
           <div class="container clearfix">
@@ -53,7 +49,7 @@
                 </ul>
 
                 <div class="entry-image">
-                  <img src="/images/blog/{{ file.page.publishedOn }}/{{ file.page.title | lower | replace(' ', '-') }}.jpg" alt="{{ file.page.title }}">
+                  <img src="/images/blog/{{ file.page.title | lower | replace(' ', '-') }}.jpg" alt="{{ file.page.title }}">
                 </div>
 
                 {{ file.page.body|safe }}
