@@ -143,7 +143,7 @@ site.time   = new Date();
   });
 
   // Markdown
-  gulp.task('blog', function(cb) {
+  gulp.task('blog', ['reviews'], function(cb) {
     var stream = gulp.src(['src/blog/**/*.md'])
                      .pipe(plugins.frontMatter({property: 'page', remove: true}))
                      .pipe(plugins.data({site: site}))
