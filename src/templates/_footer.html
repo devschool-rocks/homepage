@@ -4,7 +4,7 @@
       <div class="col_one_third">
         <div class="widget clearfix">
 
-          <div style="background: url('/images/world-map.png') no-repeat center center; background-size: 100%;">
+          <div style="min-height: 100px; background: url('/images/world-map.png') no-repeat center center; background-size: 100%;">
             <address>
               <strong>Corporate:</strong><br>
               8 THE GREEN Suite #4595<br>
@@ -23,16 +23,16 @@
           <div class="fslider testimonial no-image nobg noborder noshadow nopadding" data-animation="slide" data-arrows="false">
             <div class="flexslider">
               <div class="slider-wrap">
-{% for review in site.reviews %}
-<div class="slide">
-  <div class="testi-content">
-    <p>{{ review.body }}</p>
-    <div class="testi-meta">
-      {{ review.name }}
-    </div>
-  </div>
-</div>
-{% endfor %}
+                {% for review in site.reviews %}
+                <div class="slide">
+                  <div class="testi-content">
+                    <p>{{ review.body }}</p>
+                    <div class="testi-meta">
+                      {{ review.name }}
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
               </div>
             </div>
           </div>
