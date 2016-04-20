@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://devschool.rocks/</loc>
-    <lastmod>2016-04-14T08:03:26.000Z</lastmod>
-  </url>
+    <url>
+        <loc>https://devschool.rocks/</loc>
+        <lastmod>2016-04-20T06:53:31.000Z</lastmod>
+    </url>
+    <url>
+        <loc>https://devschool.rocks/blog/</loc>
+        <lastmod>2016-04-20T06:53:31.000Z</lastmod>
+    </url>
+    <url>
+        <loc>https://devschool.rocks/the-devschool-difference-humans-first/</loc>
+        <lastmod>2016-04-20T06:53:30.000Z</lastmod>
+    </url>
+    <url>
+        <loc>https://devschool.rocks/we-teach-gulpjs-for-front-end-development/</loc>
+        <lastmod>2016-04-20T06:53:30.000Z</lastmod>
+    </url>
 </urlset>
