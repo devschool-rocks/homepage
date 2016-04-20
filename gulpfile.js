@@ -5,6 +5,7 @@ site.time   = new Date();
   var gulp    = require('gulp');
   var plugins = require('gulp-load-plugins')();
   var indexify = require('gulp-indexify');
+  var sitemap = require('gulp-sitemap');
   var del     = require('del');
   var open    = require('open');
   var path    = require('path');
@@ -87,6 +88,14 @@ site.time   = new Date();
     return gulp.src('./dist/**/*.html')
       .pipe(plugins.revReplace({manifest: manifest}))
       .pipe(gulp.dest('dist'));
+  });
+
+  gulp.task('sitemap', function () {
+      gulp.src(['dist/**/*.html', '!./dist/privacy/*.html', '!./dist/terms/*.html'])
+	  .pipe(sitemap({
+	      siteUrl: 'https://devschool.rocks'
+	  }))
+	  .pipe(gulp.dest('./dist'));
   });
 
   // JS
@@ -179,7 +188,7 @@ site.time   = new Date();
   });
 
   gulp.task('production', function(cb) {
-    plugins.sequence('clean', 'reviews', 'images', ['static', 'bower', 'fonts'], 'revreplace', cb);
+    plugins.sequence('clean', 'reviews', 'images', ['static', 'bower', 'fonts'], 'sitemap', 'revreplace', cb);
   });
 
   gulp.task('serve', function(cb) {
@@ -209,5 +218,5 @@ site.time   = new Date();
     gulp.watch('src/images/**/*', ['images']);
   });
 
-  gulp.task('default', plugins.sequence('clean', 'reviews', 'images', ['static', 'bower', 'fonts'], 'serve'));
+  gulp.task('default', plugins.sequence('clean', 'reviews', 'images', ['static', 'bower', 'fonts'], 'sitemap', 'serve'));
 })();
