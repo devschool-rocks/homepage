@@ -1,5 +1,4 @@
 {% extends 'layout.html' %}
-
 {% block title %}Coding Bootcamp and Developer School | Learn to Code @ Devschool!{% endblock %}
 {% block meta_description %}In our online coding bootcamp, we teach you to code by coding with you, side by side, helping you build real apps, we also guarantee you a job!{% endblock %}
 {% block canonical %}https://devschool.rocks{% endblock %}
@@ -18,26 +17,23 @@
 {% endblock %}
 
 {% block body %}
-<section id="slider" class="slider-parallax swiper_wrapper full-screen clearfix">
-  <div class="slider-parallax-inner">
 
-    <div class="swiper-container swiper-parent">
-      <div class="swiper-wrapper">
-	<div class="swiper-slide dark" style="background-image: url('/images/homepage-bg.jpg');">
-	  <div class="container clearfix">
-	    <div class="dark slider-caption slider-caption-center">
-	      <h2>Learn to code, online with a <u>live</u> mentor at your side</h2>
-	      <div>
-		<a href="#applySection" class="btn btn-apply-big btn-lg btn-danger" data-scrollto="#applySection" data-offset="100">REQUEST AN INTERVIEW</a>
-	      </div>
-	    </div>
-	  </div>
-	</div>
+<section id="slider" class="force-full-screen full-screen">
+  <div class="force-full-screen full-screen section nopadding nomargin noborder ohidden" style="height: 781px;">
+    <div class="container clearfix dark">
+      <div class="dark slider-caption slider-caption-center" style="top: 264.5px;">
+	<h2 data-animate="fadeInUp" class="dark fadeInUp animated">Learn to code, online with a <u>live</u> mentor at your side</h2>
+	<a data-animate="fadeInUp" data-delay="400" href="#applySection" class="button button-border button-light button-rounded button-large noleftmargin nobottommargin fadeInUp animated" style="margin-top: 30px">SCHEDULE INTERVIEW</a>
+<!--        <a data-animate="fadeInUp" data-delay="600" href="#" class="button button-3d button-red button-large nobottommargin fadeInUp animated" style="margin: 30px 0 0 10px">WATCH QUICK DEMO</a> -->
       </div>
     </div>
-
-    <a href="#" title="read more about our online coding bootcamp" data-scrollto="#content" data-offset="100" class="dark one-page-arrow"><span class="icon-angle-down infinite animated fadeInDown"></span></a>
-
+    <div class="video-wrap">
+      <video poster="/images/demo.png" preload="auto" loop="" autoplay="" muted="" style="width: 1596px; height: 898px; top: -58.5px;">
+	<source src="/videos/demo.mp4" type="video/mp4">
+	<source src="/videos/demo.webm" type="video/webm">
+      </video>
+      <div class="video-overlay" style="background-color: rgba(0,0,0,0.45)">&nbsp;</div>
+    </div>
   </div>
 </section>
 

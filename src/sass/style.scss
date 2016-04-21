@@ -13129,4 +13129,19 @@ ul.example-apps li {
     color: rgb(255, 255, 255);
   }
 
+article.single-post h2 {
+    margin-top: 2.2em !important;
+    letter-spacing: 0.03em;
+}
 
+p {
+    font-family: 'Lato', helvetica, sans-serif;
+    font-size: 1.45em;
+    letter-spacing: 0.03em;
+    /* line-height: 2.2 !important; */
+    font-weight: 300;
+}
+
+.panel .panel-body {
+    padding: 2em;
+}
