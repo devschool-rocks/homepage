@@ -6456,6 +6456,13 @@ body:not(.device-touch) .button {
   line-height: 52px;
 }
 
+.button.button-giant {
+  padding: 0 26px;
+  font-size: 2em;
+  height: 86px;
+  line-height: 86px;
+}
+
 .button.button-desc {
   text-align: left;
   padding: 24px 34px;
@@ -13122,7 +13129,7 @@ ul.example-apps li {
 }
 
 .joinNowBtn.button {
-  background-color: #E03939;
+  background-color: #3973E0;
 }
 .dark .button.button-border:not(.button-light) {
   border-color: rgba(255,255,255,0.4);
