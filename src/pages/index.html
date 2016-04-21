@@ -4,12 +4,14 @@
 {% block canonical %}https://devschool.rocks{% endblock %}
 
 {% block menu %}
-<li><a class="active" href="/"><div>CODING BOOTCAMP</div></a></li>
+<li><a href="/"><div>HOME</div></a></li>
 <li><a data-scrollto="#pricing" data-offset="30" href="#pricing"><div>PRICING</div></a></li>
 <li><a data-scrollto="#learn" data-offset="30" href="#learn"><div>CURRICULUM</div></a></li>
 <li><a data-scrollto="#guarantee" data-offset="60" href="#guarantee"><div>100% HIRE RATE</div></a></li>
 <li><a href="/blog"><div>THE BLOG</div></a></li>
 {% endblock %}
+
+{% block dark %}dark{% endblock %}
 
 {% block logo %}
   <a href="/" class="standard-logo" data-dark-logo="/images/logo-dark.png"><img src="/images/logo.png" alt="Devschool, online coding bootcamp"></a>
@@ -23,7 +25,7 @@
     <div class="container clearfix dark">
       <div class="dark slider-caption slider-caption-center" style="top: 264.5px;">
 	<h2 data-animate="fadeInUp" class="dark fadeInUp animated">Learn to code, online with a <u>live</u> mentor at your side</h2>
-	<a data-animate="fadeInUp" data-delay="400" href="#applySection" class="button button-border button-light button-rounded button-large noleftmargin nobottommargin fadeInUp animated" style="margin-top: 30px">SCHEDULE INTERVIEW</a>
+        <a data-animate="fadeInUp" data-delay="400" data-scrollto="#applySection" data-offset="60" href="#applySection" class="button button-border button-light button-rounded button-large noleftmargin nobottommargin fadeInUp animated" style="margin-top: 30px">APPLY TODAY</a>
 <!--        <a data-animate="fadeInUp" data-delay="600" href="#" class="button button-3d button-red button-large nobottommargin fadeInUp animated" style="margin: 30px 0 0 10px">WATCH QUICK DEMO</a> -->
       </div>
     </div>

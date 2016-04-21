@@ -5,8 +5,6 @@ tags: learn to code
 publishedOn: 2016/04/15
 ---
 
-## JavaScript is the way, the future, the now, the everything
-
 The blog you are reading would have once been a quite large Ruby on Rails application, but those days are over and these days I am learning more and more, that we might have 'overdone' the back-end. Instead, this blog was built using GulpJS and basic HTML/CSS and of course, JavaScript, and I don't miss Rails once bit!
 
 <!--more-->

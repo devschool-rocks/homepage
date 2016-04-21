@@ -13102,46 +13102,50 @@ body:not(.no-transition) #wrapper,
 }
 
 ul.electives li {
-    color: white;
-    line-height: 2.5;
-    background-color: #FF4147;
-    padding: 8px 20px;
-    border: 2px solid #AF2327;
-    margin: 10px 5px;
-    border-radius: 24px;
-  }
+  color: white;
+  line-height: 2.5;
+  background-color: #FF4147;
+  padding: 8px 20px;
+  border: 2px solid #AF2327;
+  margin: 10px 5px;
+  border-radius: 24px;
+}
 
 ul.example-apps li {
-    color: white;
-    line-height: 2.5;
-    background-color: #0A92E8;
-    padding: 8px 20px;
-    border: 2px solid #177CBB;
-    margin: 10px 5px;
-    border-radius: 24px;
-  }
+  color: white;
+  line-height: 2.5;
+  background-color: #0A92E8;
+  padding: 8px 20px;
+  border: 2px solid #177CBB;
+  margin: 10px 5px;
+  border-radius: 24px;
+}
 
-  .joinNowBtn.button {
-    background-color: #E03939;
-  }
-  .dark .button.button-border:not(.button-light) {
-    border-color: rgba(255,255,255,0.4);
-    color: rgb(255, 255, 255);
-  }
+.joinNowBtn.button {
+  background-color: #E03939;
+}
+.dark .button.button-border:not(.button-light) {
+  border-color: rgba(255,255,255,0.4);
+  color: rgb(255, 255, 255);
+}
 
 article.single-post h2 {
-    margin-top: 2.2em !important;
-    letter-spacing: 0.03em;
+  margin-top: 2.2em !important;
+  letter-spacing: 0.03em;
 }
 
 p {
-    font-family: 'Lato', helvetica, sans-serif;
-    font-size: 1.45em;
-    letter-spacing: 0.03em;
-    /* line-height: 2.2 !important; */
-    font-weight: 300;
+  font-family: 'Lato', helvetica, sans-serif;
+  font-size: 1.45em;
+  letter-spacing: 0.03em;
+  /* line-height: 2.2 !important; */
+  font-weight: 300;
 }
 
 .panel .panel-body {
-    padding: 2em;
+  padding: 2em;
+}
+
+footer p {
+  font-size: 0.8em;
 }
