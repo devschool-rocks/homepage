@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block title %}Oh knowz... 404z.... shit{% endblock %}
+{% block meta_description %}{% endblock %}
+{% block canonical %}https://devschool.rocks/404{% endblock %}
+
+{% block logo %}
+  <a href="/" class="standard-logo" data-dark-logo="/images/logo-dark.png"><img src="images/logo.png" alt="Devschool, online coding bootcamp"></a>
+  <a href="/" class="retina-logo" data-dark-logo="/images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Learn to code online in our coding bootcamp"></a>
+{% endblock %}
+
+
+{% block menu %}
+<li><a href="/"><div>HOME</div></a></li>
+{% endblock %}
+
+{% block body %}
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div class="row clearfix">
+        <h1>Whoa.... so sorry dude(tte)</h1>
+        <p>You have followed a link that no longer works because I fucked up by moving files around
+           without making sure there was a way to do simple redirects, which I am now setting up!</p>
+
+        <p>Many apologies. But in the meantime.....</p>
+
+        <h4>Perhaps try one of these?</h4>
+        <ul>
+          <li><a href="/"><div>Homepage</div></a></li>
+          <li><a href="/blog"><div>Our blog</div></a></li>
+          <li><a href="/privacy"><div>The privacy policy</div></a></li>
+          <li><a href="/terms"><div>Legal terms and mumbojumo</div></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}
