@@ -5,6 +5,7 @@ site.time   = new Date();
   var gulp    = require('gulp');
   var plugins = require('gulp-load-plugins')();
   var indexify = require('gulp-indexify');
+  var merge    = require('merge-stream');
   var sitemap = require('gulp-sitemap');
   var del     = require('del');
   var open    = require('open');
@@ -130,16 +131,24 @@ site.time   = new Date();
 
   // HTML
   gulp.task('pages', ['blog'], function() {
-    var stream = gulp.src(['src/pages/**/*.html'])
+    var pages = gulp.src(['src/pages/**/*.html', '!src/pages/404.html'])
                      .pipe(plugins.data({site: site}))
                      .pipe(plugins.nunjucksRender({
                        path: ['src/templates']
                      }))
                      .pipe(plugins.htmlmin({collapseWhitespace: true}))
-                     .pipe(indexify())
-                     .pipe(gulp.dest('dist'))
-                     .pipe(reload({stream: true}));
-    return stream;
+                     .pipe(indexify());
+
+    var fourOhFour = gulp.src(['src/pages/404.html'])
+                     .pipe(plugins.data({site: site}))
+                     .pipe(plugins.nunjucksRender({
+                       path: ['src/templates']
+                     }))
+                     .pipe(plugins.htmlmin({collapseWhitespace: true}));
+
+    return merge(pages, fourOhFour)
+            .pipe(gulp.dest('dist'))
+            .pipe(reload({stream: true}));
   });
 
   // Markdown
