@@ -1,15 +1,6 @@
 {
   "css/app.min.css": "css/app-8859c9f30f.min.css",
-  "images/bg_black_vinyl.jpg": "images/bg_black_vinyl-6f2cd95493.jpg",
   "images/bg_white_crinkle.jpg": "images/bg_white_crinkle-1c6b9c43bd.jpg",
   "images/close.png": "images/close-2f6403f000.png",
-  "images/foot-logo.png": "images/foot-logo-7946ddbd6b.png",
-  "images/grid.png": "images/grid-98caca5565.png",
-  "images/parallax-bg.jpg": "images/parallax-bg-08de553528.jpg",
-  "images/parallax-bg2.jpg": "images/parallax-bg2-21df370df7.jpg",
-  "images/pattern2.png": "images/pattern2-a9b57ec4f1.png",
-  "images/reviews-bg.jpg": "images/reviews-bg-7983ce9658.jpg",
-  "images/twitter-lg-card.jpg": "images/twitter-lg-card-1f8b102e00.jpg",
-  "images/widget-link-dark.png": "images/widget-link-dark-9f07503478.png",
   "js/app.min.js": "js/app-77f30a8845.min.js"
 }
