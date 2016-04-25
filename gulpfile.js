@@ -197,7 +197,7 @@ site.time   = new Date();
   });
 
   gulp.task('production', function(cb) {
-    plugins.sequence('clean', 'reviews', 'images', ['static', 'bower', 'fonts'], 'sitemap', 'revreplace', cb);
+    plugins.sequence('clean', 'reviews', ['static', 'bower', 'fonts'], 'sitemap', 'revreplace', cb);
   });
 
   gulp.task('serve', function(cb) {
@@ -227,5 +227,5 @@ site.time   = new Date();
     gulp.watch('src/images/**/*', ['images']);
   });
 
-  gulp.task('default', plugins.sequence('clean', 'reviews', 'images', ['static', 'bower', 'fonts'], 'sitemap', 'serve'));
+  gulp.task('default', plugins.sequence('clean', 'reviews', ['static', 'bower', 'fonts'], 'sitemap', 'serve'));
 })();

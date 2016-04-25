@@ -1,0 +1,24 @@
+<svg width="351px" height="98px" viewBox="57 27 351 98" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="100%" y1="0%" x2="0%" y2="86.5908659%" id="linearGradient-1">
+            <stop stop-color="#E41E1E" offset="0%"></stop>
+            <stop stop-color="#E53F3F" offset="36.9817326%"></stop>
+            <stop stop-color="#B81818" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-2" points="13.4135081 12.7344698 99.9403537 0 88.8964259 97.8884674 0 84.3477096"></polygon>
+    </defs>
+    <text id="Devschool" stroke="none" fill="none" font-family="AvenirNext-Medium, Avenir Next" font-size="48" font-weight="400">
+        <tspan x="157.34" y="100" fill="#E41F1F">Devschool</tspan>
+    </text>
+    <text id="tm" stroke="none" fill="none" font-family="AvenirNext-Medium, Avenir Next" font-size="8" font-weight="400" letter-spacing="-0.222222239">
+        <tspan x="395.358222" y="99" fill="#E41F1F">tm</tspan>
+    </text>
+    <path d="M399.5,104 C403.642136,104 407,100.642136 407,96.5 C407,92.3578644 403.642136,89 399.5,89 C395.357864,89 392,92.3578644 392,96.5 C392,100.642136 395.357864,104 399.5,104 Z" id="Oval-1" stroke="#E41F1F" stroke-width="1" fill="none"></path>
+    <g id="D" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(57.000000, 27.000000)">
+        <mask id="mask-3" fill="white">
+            <use xlink:href="#path-2"></use>
+        </mask>
+        <use id="Mask" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+        <path d="M29.0963972,76.9692531 C29.0963972,76.9692531 29.0963972,47.3376622 29.0963972,31.2849014 C29.0963972,31.0405271 19.5242328,31.2849014 19.5242328,31.2849014 L25.2795191,20.9681335 L53.3601125,20.9681335 C62.0956016,20.9681335 68.7867843,23.2699583 73.4338613,27.873677 C78.0809384,32.4773956 80.404442,39.1180025 80.404442,47.7956969 C80.404442,57.02836 77.9412742,64.198702 73.0148647,69.3069377 C68.0884551,74.4151735 61.1941246,76.9692531 52.3316662,76.9692531 L29.0963972,76.9692531 Z M40.8283035,67.0682853 L49.5891426,67.0682853 C55.7598515,67.0682853 60.3624202,65.5374128 63.3969869,62.4756219 C66.4315536,59.4138311 67.9488142,54.7643039 67.9488142,48.526901 C67.9488142,43.7008812 66.729927,39.6830523 64.2921161,36.4732939 C62.6161211,34.2651622 60.5973393,32.7399807 58.2357099,31.8977036 C55.8740806,31.0554266 52.4332637,30.6342944 47.913156,30.6342944 L40.8283035,30.6342944 L40.8283035,67.0682853 Z" fill="#FFFFFF" mask="url(#mask-3)"></path>
+    </g>
+</svg>
