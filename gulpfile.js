@@ -4,9 +4,7 @@ site.time   = new Date();
 (function() {
   var gulp    = require('gulp');
   var plugins = require('gulp-load-plugins')();
-  var indexify = require('gulp-indexify');
-  var merge    = require('merge-stream');
-  var sitemap = require('gulp-sitemap');
+  var merge   = require('merge-stream');
   var del     = require('del');
   var open    = require('open');
   var path    = require('path');
@@ -93,7 +91,7 @@ site.time   = new Date();
 
   gulp.task('sitemap', function () {
       gulp.src(['dist/**/*.html', '!./dist/privacy/*.html', '!./dist/terms/*.html'])
-	  .pipe(sitemap({
+	  .pipe(plugins.sitemap({
 	      siteUrl: 'https://devschool.rocks'
 	  }))
 	  .pipe(gulp.dest('./dist'));
@@ -137,7 +135,7 @@ site.time   = new Date();
                        path: ['src/templates']
                      }))
                      .pipe(plugins.htmlmin({collapseWhitespace: true}))
-                     .pipe(indexify());
+                     .pipe(plugins.indexify());
 
     var fourOhFour = gulp.src(['src/pages/404.html'])
                      .pipe(plugins.data({site: site}))
@@ -161,7 +159,7 @@ site.time   = new Date();
                      .pipe(plugins.wrap(function (data) {
                        return fs.readFileSync('src/templates/blog.html').toString();
                      }, null, {engine: 'nunjucks'}))
-                     .pipe(indexify())
+                     .pipe(plugins.indexify())
                      .pipe(gulp.dest('dist'))
                      .pipe(reload({stream: true}));
     return stream;
