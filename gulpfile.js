@@ -183,7 +183,7 @@ site.time   = new Date();
                .pipe(gulp.dest('./dist/fonts'));
   });
 
-  gulp.task('static', ['js', 'css', 'pages', 'fonts'], function() {
+  gulp.task('static', ['images', 'js', 'css', 'pages', 'fonts'], function() {
     return gulp.src('src/static/**/*')
                .pipe(gulp.dest('dist'));
   });
