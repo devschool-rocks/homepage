@@ -119,8 +119,10 @@ site.time   = new Date();
   gulp.task('css', function () {
     return gulp.src(['src/sass/**/*.scss'])
                .pipe(plugins.sourcemaps.init())
+               .pipe(plugins.autoprefixer())
                .pipe(plugins.concat('app.min.css'))
                .pipe(plugins.sass({outputStyle: 'normal', errLogToConsole: true}))
+               .on('error', plugins.util.log)
                .pipe(plugins.sourcemaps.write())
                .pipe(gulp.dest('dist/css'))
                .pipe(reload({stream: true}));
