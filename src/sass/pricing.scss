@@ -1,26 +1,18 @@
 /* Common styles */
 .pricing {
-  display: -webkit-flex;
   display: flex;
-  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-justify-content: center;
   justify-content: center;
   width: 100%;
-  margin: 0 auto 3em;
 }
 
 .pricing--item {
   position: relative;
-  display: -webkit-flex;
   display: flex;
-  -webkit-flex-direction: column;
   flex-direction: column;
-  -webkit-align-items: stretch;
   align-items: stretch;
   text-align: center;
-  -webkit-flex: 0 1 330px;
-  flex: 0 1 330px;
+  flex: 0 1 340px;
 }
 
 .pricing--feature-list {
@@ -108,19 +100,6 @@
 
 .pricing .pricing--feature {
   padding: 0.15em 0;
-}
-
-.pricing .pricing--action {
-  font-weight: bold;
-  margin-top: auto;
-  padding: 1em 2em;
-  color: #fff;
-  border-radius: 5px;
-  background: #F4494D;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
-  text-transform: uppercase;
-  letter-spacing: 2px;
 }
 
 .pricing .pricing--action:hover,

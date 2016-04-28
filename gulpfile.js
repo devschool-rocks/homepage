@@ -23,6 +23,12 @@ site.time   = new Date();
     }
   };
 
+  var onError = function(err) {
+    plugins.util.beep();
+    console.log(err);
+  };
+
+
   var permalink = function(path) {
     return path.split("/blog")[1].replace('.html','');
   };
@@ -75,22 +81,25 @@ site.time   = new Date();
 
   gulp.task('revision', ['css', 'js', 'images'], function(){
     return gulp.src(['dist/**/*.css', 'dist/**/*.js', 'dist/**/*.png', 'dist/**/*.jpg'])
-      .pipe(plugins.rev())
-      .pipe(gulp.dest('dist'))
-      .pipe(plugins.rev.manifest())
-      .pipe(gulp.dest('dist'));
+               .pipe(plugins.plumber({errorHandler: onError}))
+               .pipe(plugins.rev())
+               .pipe(gulp.dest('dist'))
+               .pipe(plugins.rev.manifest())
+               .pipe(gulp.dest('dist'));
   });
 
   gulp.task('revreplace', ['revision'], function(){
     var manifest = gulp.src('./dist/rev-manifest.json');
 
     return gulp.src('./dist/**/*.html')
-      .pipe(plugins.revReplace({manifest: manifest}))
-      .pipe(gulp.dest('dist'));
+               .pipe(plugins.plumber({errorHandler: onError}))
+               .pipe(plugins.revReplace({manifest: manifest}))
+               .pipe(gulp.dest('dist'));
   });
 
-  gulp.task('sitemap', function () {
+  gulp.task('sitemap', function() {
       gulp.src(['dist/**/*.html', '!./dist/privacy/*.html', '!./dist/terms/*.html'])
+          .pipe(plugins.plumber({errorHandler: onError}))
 	  .pipe(plugins.sitemap({
 	      siteUrl: 'https://devschool.rocks'
 	  }))
@@ -100,6 +109,7 @@ site.time   = new Date();
   // JS
   gulp.task('js', function() {
     return gulp.src(['src/js/**/*.js'])
+               .pipe(plugins.plumber({errorHandler: onError}))
                .pipe(plugins.sourcemaps.init())
                .pipe(plugins.concat('app.min.js'))
                .pipe(plugins.uglify())
@@ -111,6 +121,7 @@ site.time   = new Date();
   // IMAGES
   gulp.task('images', function() {
   gulp.src('src/images/**/*')
+      .pipe(plugins.plumber({errorHandler: onError}))
       .pipe(plugins.imagemin())
       .pipe(gulp.dest('dist/images'));
   });
@@ -118,6 +129,7 @@ site.time   = new Date();
   // SCSS
   gulp.task('css', function () {
     return gulp.src(['src/sass/**/*.scss'])
+               .pipe(plugins.plumber({errorHandler: onError}))
                .pipe(plugins.sourcemaps.init())
                .pipe(plugins.autoprefixer())
                .pipe(plugins.concat('app.min.css'))
@@ -132,6 +144,7 @@ site.time   = new Date();
   // HTML
   gulp.task('pages', ['blog'], function() {
     var pages = gulp.src(['src/pages/**/*.html', '!src/pages/404.html'])
+                     .pipe(plugins.plumber({errorHandler: onError}))
                      .pipe(plugins.data({site: site}))
                      .pipe(plugins.nunjucksRender({
                        path: ['src/templates']
@@ -140,6 +153,7 @@ site.time   = new Date();
                      .pipe(plugins.indexify());
 
     var fourOhFour = gulp.src(['src/pages/404.html'])
+                     .pipe(plugins.plumber({errorHandler: onError}))
                      .pipe(plugins.data({site: site}))
                      .pipe(plugins.nunjucksRender({
                        path: ['src/templates']
@@ -154,6 +168,7 @@ site.time   = new Date();
   // Markdown
   gulp.task('blog', ['reviews'], function(cb) {
     var stream = gulp.src(['src/blog/**/*.md'])
+                     .pipe(plugins.plumber({errorHandler: onError}))
                      .pipe(plugins.frontMatter({property: 'page', remove: true}))
                      .pipe(plugins.data({site: site}))
                      .pipe(plugins.markdown())
@@ -175,6 +190,7 @@ site.time   = new Date();
   // REVIEWS
   gulp.task('reviews', function() {
     return gulp.src(['src/reviews/*.md'])
+               .pipe(plugins.plumber({errorHandler: onError}))
                .pipe(plugins.frontMatter({property: 'page', remove: true}))
                .pipe(collectReviews())
                .pipe(reload({stream: true}));
