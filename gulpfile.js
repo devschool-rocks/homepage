@@ -79,7 +79,7 @@ site.time   = new Date();
     }
   };
 
-  gulp.task('revision', ['css', 'js', 'images'], function(){
+  gulp.task('revision', function(){
     return gulp.src(['dist/**/*.css', 'dist/**/*.js', 'dist/**/*.png', 'dist/**/*.jpg'])
                .pipe(plugins.plumber({errorHandler: onError}))
                .pipe(plugins.rev())
@@ -110,10 +110,10 @@ site.time   = new Date();
   gulp.task('js', function() {
     return gulp.src(['src/js/**/*.js'])
                .pipe(plugins.plumber({errorHandler: onError}))
-               .pipe(plugins.sourcemaps.init())
+//               .pipe(plugins.sourcemaps.init())
                .pipe(plugins.concat('app.min.js'))
                .pipe(plugins.uglify())
-               .pipe(plugins.sourcemaps.write())
+//               .pipe(plugins.sourcemaps.write())
                .pipe(gulp.dest('dist/js'))
                .pipe(reload({stream: true}));
   });
@@ -130,12 +130,14 @@ site.time   = new Date();
   gulp.task('css', function () {
     return gulp.src(['src/sass/**/*.scss'])
                .pipe(plugins.plumber({errorHandler: onError}))
-               .pipe(plugins.sourcemaps.init())
+//               .pipe(plugins.sourcemaps.init())
                .pipe(plugins.autoprefixer())
                .pipe(plugins.concat('app.min.css'))
                .pipe(plugins.sass({outputStyle: 'normal', errLogToConsole: true}))
+               .pipe(plugins.replace('/*!', '/*'))
+               .pipe(plugins.cleanCss({keepSpecialComments: true}))
                .on('error', plugins.util.log)
-               .pipe(plugins.sourcemaps.write())
+//               .pipe(plugins.sourcemaps.write())
                .pipe(gulp.dest('dist/css'))
                .pipe(reload({stream: true}));
   });
