@@ -1,5 +1,5 @@
 var site    = require('./site.json');
-site.time   = new Date();
+site.builtAt   = new Date();
 
 (function() {
   var gulp    = require('gulp');
@@ -28,7 +28,6 @@ site.time   = new Date();
     console.log(err);
   };
 
-
   var permalink = function(path) {
     return path.split("/blog")[1].replace('.html','');
   };
@@ -36,37 +35,36 @@ site.time   = new Date();
   var collectReviews = function() {
     var reviews = [];
 
-    return through.obj(function (file, enc, cb) {
-      reviews.push(file.page);
-      var review    = reviews[reviews.length - 1];
+    return through.obj(function(file, enc, next) {
+      var review    = file.page;
       review.body   = file.contents.toString();
-      cb();
-    },
-    function (cb) {
+      reviews.push(review);
+      next();
+    }, function(done) {
       site.reviews = reviews;
-      cb();
+      done();
     });
   };
 
   var collectPosts = function() {
     var posts = [];
 
-    return through.obj(function (file, enc, cb) {
-      posts.push(file.page);
-      var post          = posts[posts.length - 1];
+    return through.obj(function(file, enc, next) {
+      var post          = file.page;
       post.body         = file.contents.toString();
       post.summary      = summarize(file.contents.toString(), '<!--more-->');
       post.permalink    = permalink(file.path);
+
+      posts.push(post);
       this.push(file);
-      cb();
-    },
-    function (cb) {
-      posts.sort(function (a, b) {
+      next();
+    }, function(done) {
+      posts.sort(function(a, b) {
         return Date.parse(b.publishedOn) - Date.parse(a.publishedOn);
       });
-      site.posts = posts;
 
-      cb();
+      site.posts = posts;
+      done();
     });
   };
 
@@ -142,29 +140,31 @@ site.time   = new Date();
                .pipe(reload({stream: true}));
   });
 
+  var buildPage = function(stream) {
+    return stream
+      .pipe(plugins.plumber({errorHandler: onError}))
+      .pipe(plugins.data({site: site}))
+      .pipe(plugins.nunjucksRender({
+        path: ['src/templates']
+      }))
+      .pipe(plugins.htmlmin({collapseWhitespace: true}));
+  };
 
   // HTML
   gulp.task('pages', ['blog'], function() {
-    var pages = gulp.src(['src/pages/**/*.html', '!src/pages/404.html'])
-                     .pipe(plugins.plumber({errorHandler: onError}))
-                     .pipe(plugins.data({site: site}))
-                     .pipe(plugins.nunjucksRender({
-                       path: ['src/templates']
-                     }))
-                     .pipe(plugins.htmlmin({collapseWhitespace: true}))
-                     .pipe(plugins.indexify());
 
-    var fourOhFour = gulp.src(['src/pages/404.html'])
-                     .pipe(plugins.plumber({errorHandler: onError}))
-                     .pipe(plugins.data({site: site}))
-                     .pipe(plugins.nunjucksRender({
-                       path: ['src/templates']
-                     }))
-                     .pipe(plugins.htmlmin({collapseWhitespace: true}));
+    var pages = buildPage(
+      gulp.src(['src/pages/**/*.html', '!src/pages/404.html'])
+    ).pipe(plugins.indexify());
+
+    var fourOhFour = buildPage(
+      gulp.src(['src/pages/404.html'])
+    );
 
     return merge(pages, fourOhFour)
             .pipe(gulp.dest('dist'))
             .pipe(reload({stream: true}));
+
   });
 
   // Markdown
@@ -222,7 +222,7 @@ site.time   = new Date();
     plugins.sequence('sync', 'watch', cb);
   });
 
-  gulp.task('deploy', [], function() {
+  gulp.task('deploy', ['production'], function() {
     return gulp.src('dist/**/*')
                .pipe(plugins.ghPages(settings.ghPages))
                .on('end', function(){
@@ -246,4 +246,4 @@ site.time   = new Date();
   });
 
   gulp.task('default', plugins.sequence('clean', 'reviews', ['static', 'bower', 'fonts'], 'sitemap', 'serve'));
-})();
+}());
