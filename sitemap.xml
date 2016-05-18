@@ -2,26 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://devschool.rocks/</loc>
-        <lastmod>2016-05-18T21:47:29.000Z</lastmod>
+        <lastmod>2016-05-18T21:56:26.000Z</lastmod>
     </url>
     <url>
         <loc>https://devschool.rocks/blog/</loc>
-        <lastmod>2016-05-18T21:47:27.000Z</lastmod>
+        <lastmod>2016-05-18T21:56:26.000Z</lastmod>
     </url>
     <url>
         <loc>https://devschool.rocks/front-end-masters/</loc>
-        <lastmod>2016-05-18T21:47:29.000Z</lastmod>
+        <lastmod>2016-05-18T21:56:26.000Z</lastmod>
     </url>
     <url>
         <loc>https://devschool.rocks/the-devschool-difference-humans-first/</loc>
-        <lastmod>2016-05-18T21:47:24.000Z</lastmod>
-    </url>
-    <url>
-        <loc>https://devschool.rocks/we-teach-classless-oo-immutability-and-the-principle-of-the-small/</loc>
-        <lastmod>2016-05-18T21:47:24.000Z</lastmod>
+        <lastmod>2016-05-18T21:56:23.000Z</lastmod>
     </url>
     <url>
         <loc>https://devschool.rocks/we-teach-gulpjs-for-front-end-development/</loc>
-        <lastmod>2016-05-18T21:47:24.000Z</lastmod>
+        <lastmod>2016-05-18T21:56:23.000Z</lastmod>
     </url>
 </urlset>
