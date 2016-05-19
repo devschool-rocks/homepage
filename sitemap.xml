@@ -2,22 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://devschool.rocks/</loc>
-        <lastmod>2016-05-19T18:23:04.000Z</lastmod>
+        <lastmod>2016-05-19T22:39:00.000Z</lastmod>
     </url>
     <url>
         <loc>https://devschool.rocks/blog/</loc>
-        <lastmod>2016-05-19T18:23:04.000Z</lastmod>
-    </url>
-    <url>
-        <loc>https://devschool.rocks/front-end-masters/</loc>
-        <lastmod>2016-05-19T18:23:04.000Z</lastmod>
+        <lastmod>2016-05-19T22:39:00.000Z</lastmod>
     </url>
     <url>
         <loc>https://devschool.rocks/the-devschool-difference-humans-first/</loc>
-        <lastmod>2016-05-19T18:22:57.000Z</lastmod>
+        <lastmod>2016-05-19T22:38:53.000Z</lastmod>
     </url>
     <url>
         <loc>https://devschool.rocks/we-teach-gulpjs-for-front-end-development/</loc>
-        <lastmod>2016-05-19T18:22:57.000Z</lastmod>
+        <lastmod>2016-05-19T22:38:58.000Z</lastmod>
     </url>
 </urlset>
