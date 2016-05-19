@@ -28,6 +28,16 @@ site.builtAt   = new Date();
     console.log(err);
   };
 
+  var buildPage = function(stream) {
+    return stream
+      .pipe(plugins.plumber({errorHandler: onError}))
+      .pipe(plugins.data({site: site}))
+      .pipe(plugins.nunjucksRender({
+        path: ['src/templates']
+      }))
+      .pipe(plugins.htmlmin({collapseWhitespace: true}));
+  };
+
   var permalink = function(path) {
     return path.split("/blog")[1].replace('.html','');
   };
@@ -128,27 +138,17 @@ site.builtAt   = new Date();
   gulp.task('css', function () {
     return gulp.src(['src/sass/**/*.scss'])
                .pipe(plugins.plumber({errorHandler: onError}))
-//               .pipe(plugins.sourcemaps.init())
+               .pipe(plugins.sourcemaps.init())
                .pipe(plugins.autoprefixer())
                .pipe(plugins.concat('app.min.css'))
                .pipe(plugins.sass({outputStyle: 'normal', errLogToConsole: true}))
                .pipe(plugins.replace('/*!', '/*'))
                .pipe(plugins.cleanCss({keepSpecialComments: true}))
                .on('error', plugins.util.log)
-//               .pipe(plugins.sourcemaps.write())
+               .pipe(plugins.sourcemaps.write())
                .pipe(gulp.dest('dist/css'))
                .pipe(reload({stream: true}));
   });
-
-  var buildPage = function(stream) {
-    return stream
-      .pipe(plugins.plumber({errorHandler: onError}))
-      .pipe(plugins.data({site: site}))
-      .pipe(plugins.nunjucksRender({
-        path: ['src/templates']
-      }))
-      .pipe(plugins.htmlmin({collapseWhitespace: true}));
-  };
 
   // HTML
   gulp.task('pages', ['blog'], function() {
