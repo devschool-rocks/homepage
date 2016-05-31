@@ -8599,6 +8599,16 @@ Accordions
   padding: 0 0 15px 20px;
 }
 
+.acctitle i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 14px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 44px;
+}
+
 
 /* Accordion - with Title Background
 -----------------------------------------------------------------*/
@@ -13034,9 +13044,13 @@ body:not(.no-transition) #wrapper,
   border: 1px solid #000;
 }
 
+.more-reviews p {
+  font-size: 1em;
+}
+
 .more-reviews .links,
 .more-reviews .links a{
-  font-size: 1.2em;
+  font-size: 0.8em;
   color: white !important;
 }
 .more-reviews .links a:hover {
@@ -13155,3 +13169,8 @@ p {
 footer p {
   font-size: 0.8em;
 }
+
+.img-responsive {
+      margin: 0 auto;
+    }
+

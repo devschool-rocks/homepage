@@ -1,6 +1,7 @@
 var site    = require('./site.json');
 site.builtAt   = new Date();
 
+
 (function() {
   var gulp    = require('gulp');
   var plugins = require('gulp-load-plugins')();
@@ -11,9 +12,16 @@ site.builtAt   = new Date();
   var os      = require('os');
   var through = require('through2');
   var fs      = require('fs');
+  var request = require('request');
   var forever = require('forever-monitor');
   var bSync   = require('browser-sync');
   var reload  = bSync.reload;
+
+  request('https://devschool-qna.herokuapp.com/qnas.json', function(err, resp, body) {
+    if (!err && resp.statusCode == 200) {
+      site.qnas = JSON.parse(body).sort(function(a, b) { return a.qas.length - b.qas.length; });
+    }
+  });
 
   var settings = {
     url: 'https://devschool.rocks',
