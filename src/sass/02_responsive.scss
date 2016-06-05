@@ -243,6 +243,9 @@
 
 @media (max-width: 991px) {
 
+        #header-wrap { background: #000 }
+        #slider { display: none; }
+
 	#wrapper {
 		width: 100%;
 		margin: 0;
@@ -665,7 +668,6 @@
 	#page-menu.pagemenu-active #page-submenu-trigger { background-color: rgba(0,0,0,0.2); }
 
 	#page-menu nav {
-		display: none;
 		position: absolute;
 		float: none;
 		width: 200px;
@@ -1541,8 +1543,6 @@
 
 @media (max-width: 479px) {
 
-        #header-wrap { background: #000 }
-        #slider { display: none; }
 
 	.container,
 	#header.full-header .container,
