@@ -23,6 +23,9 @@ site.builtAt   = new Date();
     }
   });
 
+  var noop = function() { return plugins.util.noop; };
+  var prod = function() { return plugins.util.env.production; };
+
   var settings = {
     url: 'https://devschool.rocks',
     src: path.join('dist', '/**/*'),
@@ -43,7 +46,7 @@ site.builtAt   = new Date();
       .pipe(plugins.nunjucksRender({
         path: ['src/templates']
       }))
-      .pipe(plugins.htmlmin({collapseWhitespace: true}));
+      .pipe(prod ? plugins.htmlmin({collapseWhitespace: true}) : noop());
   };
 
   var permalink = function(path) {
@@ -126,10 +129,8 @@ site.builtAt   = new Date();
   gulp.task('js', function() {
     return gulp.src(['src/js/**/*.js'])
                .pipe(plugins.plumber({errorHandler: onError}))
-//               .pipe(plugins.sourcemaps.init())
                .pipe(plugins.concat('app.min.js'))
-               .pipe(plugins.uglify())
-//               .pipe(plugins.sourcemaps.write())
+               .pipe(prod ? plugins.uglify() : noop())
                .pipe(gulp.dest('dist/js'))
                .pipe(reload({stream: true}));
   });
@@ -144,16 +145,15 @@ site.builtAt   = new Date();
 
   // SCSS
   gulp.task('css', function () {
+    var style = prod ? 'compressed' : 'expanded';
     return gulp.src(['src/sass/**/*.scss'])
                .pipe(plugins.plumber({errorHandler: onError}))
-               .pipe(plugins.sourcemaps.init())
                .pipe(plugins.autoprefixer())
                .pipe(plugins.concat('app.min.css'))
-               .pipe(plugins.sass({outputStyle: 'normal', errLogToConsole: true}))
+               .pipe(plugins.sass({outputStyle: style, errLogToConsole: true}))
                .pipe(plugins.replace('/*!', '/*'))
                .pipe(plugins.cleanCss({keepSpecialComments: true}))
                .on('error', plugins.util.log)
-               .pipe(plugins.sourcemaps.write())
                .pipe(gulp.dest('dist/css'))
                .pipe(reload({stream: true}));
   });
@@ -223,6 +223,7 @@ site.builtAt   = new Date();
   });
 
   gulp.task('production', function(cb) {
+    plugins.util.env.production = true;
     plugins.sequence('clean', 'reviews', ['static', 'bower', 'fonts'], 'sitemap', 'revreplace', cb);
   });
 
