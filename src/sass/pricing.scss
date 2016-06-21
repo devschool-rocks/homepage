@@ -108,3 +108,24 @@
   background-color: #4F5F56;
 }
 
+.boxy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h2.learn-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1em;
+  color: #f14b51;
+  background-color: white;
+  border: 2px solid;
+  border-radius: 12px;
+  width: 150px;
+  height: 150px;
+  margin: 0.5em;
+  padding: 0.5em;
+}
