@@ -1,0 +1,65 @@
+.jumboelect {
+  background: #3973E0;
+  color: white;
+  padding-bottom: 0;
+}
+
+.jumboelect p {
+  padding: .25em;
+  margin-bottom: 0;
+}
+
+.jumboelect .heading {
+  background: url('/images/homepage/rocket.png') center bottom no-repeat;
+  padding-bottom: 23em;
+}
+
+.jumboelect .curriculum {
+  background: #fff;
+  padding-top: 1em;
+}
+
+.btn {
+  margin:.25em .1em;
+  border: 0;
+  background-color: #3973E0;
+  border-radius: 12px;
+}
+
+.btn:hover, .btn:active, .btn:focus {
+  background-color: #1ab87a !important;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .btn {
+    width: 90%;
+    clear: both;
+  }
+
+  h3 {
+    margin: 0 .5em .3em .5em;
+  }
+}
+
+.boxy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h2.learn-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1em;
+  color: #f14b51;
+  background-color: white;
+  border: 2px solid;
+  border-radius: 12px;
+  width: 150px;
+  height: 150px;
+  margin: 0.5em;
+  padding: 0.5em;
+}

@@ -1,0 +1,55 @@
+section#financing {
+  .ribbon-outer-container.ribbon-dark {
+    background: rgba(0,0,0,0.8);
+    color: white;
+  }
+
+  .ribbon-homepage .ribbon-segment {
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    margin: 0;
+    padding: 28px 0 22px;
+    border-right: 0;
+  }
+
+  @media (min-width: 768px) {
+    .ribbon-homepage {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .ribbon-homepage {
+      opacity: 0.9;
+      position: static;
+    }
+  }
+
+  .ribbon-inner-container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  @media (min-width: 1200px) {
+    .ribbon-homepage .ribbon-inner-container {
+      width: 1170px;
+    }
+  }
+  @media (min-width: 992px) {
+    .ribbon-homepage .ribbon-inner-container {
+      width: 970px;
+    }
+  }
+  @media (min-width: 768px) {
+    .ribbon-homepage .ribbon-inner-container {
+      width: 750px;
+    }
+  }
+
+
+}

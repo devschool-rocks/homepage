@@ -9302,7 +9302,7 @@ Testimonials
 
 .testimonial-full .testi-content {
   text-align: center;
-  font-size: 18px;
+  font-size: 1.4em;
 }
 
 .testimonial-full .testi-meta { margin-top: 15px; }
@@ -9323,11 +9323,6 @@ Testimonials
 }
 
 .section > .testimonial[data-animation="fade"] { padding: 0; }
-
-.section > .testimonial .testi-content { font-size: 22px; }
-
-.section > .testimonial .testi-meta,
-.section > .testimonial .testi-meta span { font-size: 14px; }
 
 
 /* Testimonial - Pagination
@@ -13044,19 +13039,6 @@ body:not(.no-transition) #wrapper,
   border: 1px solid #000;
 }
 
-.more-reviews p {
-  font-size: 1em;
-}
-
-.more-reviews .links,
-.more-reviews .links a{
-  font-size: 0.8em;
-  color: white !important;
-}
-.more-reviews .links a:hover {
-  color: black !important;
-  text-decoration: underline;
-}
 .section.blue {
   background-color: #D1EEFF;
 }
@@ -13171,6 +13153,23 @@ footer p {
 }
 
 .img-responsive {
-      margin: 0 auto;
-    }
+  margin: 0 auto;
+}
 
+.more-reviews {
+  background-color: #F14B51;
+  padding: 2em;
+}
+.more-reviews p {
+  font-size: 1.3em;
+}
+
+.more-reviews .links a{
+  color: white !important;
+}
+
+.more-reviews .links a:hover {
+  color: black !important;
+  text-decoration: underline;
+}
+.white { color: white; }
