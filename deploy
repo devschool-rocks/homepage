@@ -1,0 +1,2 @@
+gulp production
+scp -r dist/* deployer@188.166.180.29:/var/www/devschool.rocks
