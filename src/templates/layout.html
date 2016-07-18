@@ -4,6 +4,11 @@
     <meta charset="utf-8"/>
     <meta http-equiv="Content-Language" content="en">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+
+    <title>{% block title %}Best Online Coding Bootcamp in 2016 - We are Devschool!{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}Devschool is a different take on coding bootcamps. We teach you to code by coding with you, side by side, while building real world web applications!{% endblock %}">
+    <link rel="canonical" href="{% block canonical %}https://devschool.rocks/{{ file.page.permalink }}{% endblock %}" />
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/app.min.css">
     <link href="//fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700%7CArvo:400,600,800" rel="stylesheet" type="text/css">
@@ -11,9 +16,6 @@
       <script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <![endif]-->
 
-    <title>{% block title %}Best Online Coding Bootcamp in 2016 - We are Devschool!{% endblock %}</title>
-    <meta name="description" content="{% block meta_description %}Devschool is a different take on coding bootcamps. We teach you to code by coding with you, side by side, while building real world web applications!{% endblock %}">
-    <link rel="canonical" href="{% block canonical %}https://devschool.rocks/{{ file.page.permalink }}{% endblock %}" />
     {% include '_app-icons.html' %}
 
   </head>
