@@ -9,7 +9,7 @@
 }
 
 #pricing h2,
-#pricing .pricing-section--title {
+#pricing .pricing-section-title {
   margin-top: 3em;
 }
 
@@ -28,26 +28,26 @@
 .curriculum-title {
   color: white;
 }
-.pricing-item.blue .pricing--period,
-.pricing-item.blue .pricing-section--price {
+.pricing-item.blue .pricing-period,
+.pricing-item.blue .pricing-section-price {
   color: #4bb8f1;
 }
 
-.pricing--feature-list {
+.pricing-feature-list {
   text-align: left;
 }
 
-.pricing--action {
+.pricing-action {
   color: inherit;
   border: none;
   background: none;
 }
 
-.pricing--action:focus {
+.pricing-action:focus {
   outline: none;
 }
 
-.pricing .pricing--item {
+.pricing .pricing-item {
   padding: 2em 3em;
   margin: 1em;
   color: #262b38;
@@ -61,17 +61,17 @@
     margin: 3em 1em;
     float: right;
   }
-  .pricing .pricing--item {
+  .pricing .pricing-item {
     margin: 1.5em;
   }
-  .pricing .pricing--item--featured {
+  .pricing .pricing-item-featured {
     z-index: 10;
     margin: 0;
     font-size: 1.15em;
   }
 }
 
-.pricing .pricing--title {
+.pricing .pricing-title {
   font-size: 2em;
   margin: 0.5em 0 0;
   color: #1d211f;
@@ -84,7 +84,7 @@
   top: 2px;
 }
 
-.pricing-section--price {
+.pricing-section-price {
   font-size: 4em;
   font-weight: 800;
   color: #F14B51;
@@ -92,38 +92,38 @@
   z-index: 100;
 }
 
-.pricing--currency {
+.pricing-currency {
   font-size: 0.5em;
   vertical-align: super;
 }
 
-.pricing--period {
+.pricing-period {
   font-size: 0.5em;
   display: inline-block;
   padding: 0 0 0 0.5em;
   color: #F14B51;
 }
 
-.pricing .pricing--sentence {
+.pricing .pricing-sentence {
   font-weight: bold;
   margin: 0 0 1em 0;
   padding: 0 0 0.5em;
   color: #0992E8;
 }
 
-.pricing .pricing--feature-list {
+.pricing .pricing-feature-list {
   font-size: 1.3em;
   margin: 0;
   padding: 1.5em 0.5em 2.5em;
   list-style: none;
 }
 
-.pricing .pricing--feature {
+.pricing .pricing-feature {
   padding: 0.15em 0;
 }
 
-.pricing .pricing--action:hover,
-.pricing .pricing--action:focus {
+.pricing .pricing-action:hover,
+.pricing .pricing-action:focus {
   background-color: #4F5F56;
 }
 
