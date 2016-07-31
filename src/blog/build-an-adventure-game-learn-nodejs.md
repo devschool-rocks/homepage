@@ -19,7 +19,7 @@ However, through a technology called emulation, it was possible to write a multi
 
 I started using small examples of this sort of code as a vehicle to teach JavaScript and NodeJS and students really, really enjoyed it. So I started having more and more students start coding their own.
 
-Up until now we have always focues on "real world" apps, but as we got more and more 'normal' students and less and less entrepreneurs, we moved more and more towards JavaScript, because that has overtake ruby in job posts.
+Up until now we have always focused on "real world" apps, but as we got more and more 'normal' students and less and less entrepreneurs, we moved more and more towards JavaScript, because that has overtake ruby in job posts.
 
 However while Ruby on Rails makes building 'MVC' apps (read, real-world apps) very easy, the JavaScript language and ecosystem.... not so much. Students needed a step in between coding a 'real world app' and starting to code at all.
 
