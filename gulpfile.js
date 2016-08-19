@@ -159,7 +159,7 @@ site.builtAt   = new Date();
   });
 
   // HTML
-  gulp.task('pages', ['blog'], function() {
+  gulp.task('pages', function() {
 
     var pages = buildPage(
       gulp.src(['src/pages/**/*.html', '!src/pages/404.html'])
@@ -176,7 +176,7 @@ site.builtAt   = new Date();
   });
 
   // Markdown
-  gulp.task('blog', ['reviews'], function(cb) {
+  gulp.task('blog', function(cb) {
     var stream = gulp.src(['src/blog/**/*.md'])
                      .pipe(plugins.plumber({errorHandler: onError}))
                      .pipe(plugins.frontMatter({property: 'page', remove: true}))
@@ -228,7 +228,7 @@ site.builtAt   = new Date();
   });
 
   gulp.task('serve', function(cb) {
-    plugins.sequence('sync', 'watch', cb);
+    plugins.sequence('watch', 'sync', cb);
   });
 
   gulp.task('deploy', ['production'], function() {
@@ -244,15 +244,21 @@ site.builtAt   = new Date();
     return bSync({server: { baseDir: 'dist' }});
   });
 
-  // WATCH
-  gulp.task('watch', function() {
-    gulp.watch('src/js/**/*.js', ['js']);
-    gulp.watch('src/sass/**/*.scss', ['css']);
-    gulp.watch(['src/**/*.html'], ['pages']);
-    gulp.watch(['src/blog/**/*'], ['blog']);
-    gulp.watch(['src/reviews/*'], ['reviews']);
-    gulp.watch('src/images/**/*', ['images']);
+  gulp.task('content', function(cb) {
+    return plugins.sequence('reviews', 'blog', 'pages', cb);
   });
 
-  gulp.task('default', plugins.sequence('clean', 'reviews', ['static', 'bower', 'fonts'], 'sitemap', 'serve'));
+  gulp.task('assets',  ['static', 'bower', 'fonts']);
+
+  // WATCH
+  gulp.task('watch', function() {
+    gulp.watch('src/js/**/*.js', ['assets']);
+    gulp.watch('src/sass/**/*.scss', ['assets']);
+    gulp.watch('src/images/**/*', ['assets']);
+    gulp.watch(['src/**/*.html'], ['content']);
+    gulp.watch(['src/blog/**/*'], ['content']);
+    gulp.watch(['src/reviews/*'], ['reviews']);
+  });
+
+  gulp.task('default', plugins.sequence('clean', 'content', 'assets', 'sitemap', 'serve'));
 }());
