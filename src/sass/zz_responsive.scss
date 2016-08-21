@@ -1544,6 +1544,25 @@
 @media (max-width: 479px) {
 
 
+  .pricing {
+    display: block;
+    width: 100%;
+    color: #333;
+  }
+
+
+ .pricing .pricing-item {
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+.pricing-item {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border: 0;
+} 
+
 	.container,
 	#header.full-header .container,
 	.container-fullwidth { width: 310px !important; }
@@ -1771,3 +1790,27 @@ only screen and (                min-resolution: 2dppx) and (max-width: 991px) {
 	#logo a.retina-logo { display: inline-block; }
 }
 
+@media (max-width: 800px) {
+  .container {
+    padding-right: 4px;
+    padding-left: 4px;
+  }
+
+  .pricing {
+    display: block;
+    width: 100%;
+    color: #333;
+    border: 0;
+
+    .pricing-item {
+      padding: 0;
+      margin: 0;
+      box-shadow: none;
+      border: 0;
+
+      .track-icon {
+        display: none;
+      }
+    }
+  }
+}

@@ -224,7 +224,7 @@ site.builtAt   = new Date();
 
   gulp.task('production', function(cb) {
     plugins.util.env.production = true;
-    plugins.sequence('clean', 'reviews', ['static', 'bower', 'fonts'], 'sitemap', 'revreplace', cb);
+    plugins.sequence('clean', ['assets', 'content'], 'sitemap', 'revreplace', cb);
   });
 
   gulp.task('serve', function(cb) {
