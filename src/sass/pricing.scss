@@ -16,8 +16,6 @@
 .pricing-item {
   margin: 3em 0;
   padding: 2em;
-  width: 80%;
-  border: 1px solid #000;
 }
 
 #electives {
@@ -53,7 +51,7 @@
   color: #262b38;
   cursor: default;
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 @media screen and (min-width: 66.250em) {
@@ -149,3 +147,6 @@ img.track-icon {
   font-size: 1em;
 }
 
+.list-group-item {
+      margin-right: 2em;
+}

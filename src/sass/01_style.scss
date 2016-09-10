@@ -2793,7 +2793,7 @@ body:not(.stretched) .slider-parallax .slider-parallax-inner { left: auto; }
   overflow: hidden;
 }
 
-.full-screen .swiper_wrapper { height: auto; }
+.full-screen .swiper_wrapper { height: 80%; background-size: 100%; }
 
 .swiper_wrapper .swiper-container {
   position: relative;
