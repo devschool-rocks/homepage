@@ -11,8 +11,8 @@
       <script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <![endif]-->
 
-    <title>{% block title %}Best Online Coding Bootcamp in 2016 - We are Devschool!{% endblock %}</title>
-    <meta name="description" content="{% block meta_description %}Devschool is a different take on coding bootcamps. We teach you to code by coding with you, side by side, while building real world web applications!{% endblock %}">
+    <title>{% block title %}{{ file.page.title }}{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}{{ file.page.summary }}{% endblock %}">
     <link rel="canonical" href="{% block canonical %}https://devschool.rocks/{{ file.page.permalink }}{% endblock %}" />
     {% include 'src/templates/_app-icons.html' %}
 

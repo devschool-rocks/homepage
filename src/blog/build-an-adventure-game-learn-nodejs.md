@@ -7,9 +7,9 @@ publishedOn: 2016/08/01
 
 Waaaaaaaayyyyyyy back when I was about 11 or 12 I got in front of my first Apple II and I discovered the world of text-based games and I was HOOKED! From that day until the day I was coding on my own adventure game I dreamed of writing 'code' and wondered and wondered how the hell one would go about building such a thing.
 
-At the time there wasn't very many resources on how to build such a thing on the AppleII, but there were books on BASIC, which was available on the machine, and thus my thirst was both quenched, and at the same time, I was much thirstier.
-
 <!--more-->
+
+At the time there wasn't very many resources on how to build such a thing on the AppleII, but there were books on BASIC, which was available on the machine, and thus my thirst was both quenched, and at the same time, I was much thirstier.
 
 As time marched on, the technologies available changed. It was now the days of Unix and BSD running on college servers and us poor souls on Windows95 or for that matter, MacOS at the time.
 
