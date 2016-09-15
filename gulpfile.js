@@ -71,6 +71,11 @@ site.builtAt   = new Date();
     var posts = [];
 
     return through.obj(function(file, enc, next) {
+      if (file.page.published !== undefined && !file.page.published) {
+        console.log('skipping')
+        this.push(file)
+        return next();
+      }
       var post          = file.page;
       post.body         = file.contents.toString();
       post.summary      = summarize(file.contents.toString(), '<!--more-->');

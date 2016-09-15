@@ -1,7 +1,7 @@
 ---
 title: We teach React JS Technology from Facebook
 author: Jim OKelly
-tags: learn to code
+tags: what we teach
 publishedOn: 2016/09/10
 ---
 

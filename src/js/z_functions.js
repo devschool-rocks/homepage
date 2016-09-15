@@ -2273,7 +2273,7 @@ var SEMICOLON = SEMICOLON || {};
             var videoAspectRatio = innerVideoWidth/innerVideoHeight,
               newVideoWidth = outerContainerHeight * videoAspectRatio,
               innerVideoPosition = (newVideoWidth - outerContainerWidth) / 2;
-            elementVideo.css({ 'width': newVideoWidth+'px', 'height': outerContainerHeight+'px', 'left': -innerVideoPosition+'px' });
+            elementVideo.css({ 'width': newVideoWidth+'px', 'height': outerContainerHeight+'px', 'left': '0px' }); // set left to 0 to fix negative num
           } else {
             var innerVideoPosition = (innerVideoHeight - outerContainerHeight) / 2;
             elementVideo.css({ 'width': innerVideoWidth+'px', 'height': innerVideoHeight+'px', 'top': -innerVideoPosition+'px' });

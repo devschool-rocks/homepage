@@ -1,7 +1,7 @@
 ---
 title: We teach GulpJS for Front End Development
 author: Jim OKelly
-tags: learn to code
+tags: what we teach
 publishedOn: 2016/04/15
 ---
 
