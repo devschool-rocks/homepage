@@ -1,5 +1,5 @@
 {
-  "css/app.min.css": "css/app-ec3db04051.min.css",
+  "css/app.min.css": "css/app-11a6b20757.min.css",
   "images/authors/jim-okelly.png": "images/authors/jim-okelly-8d368c70b6.png",
   "images/bg_black_vinyl.jpg": "images/bg_black_vinyl-6f2cd95493.jpg",
   "images/bg_white_crinkle.jpg": "images/bg_white_crinkle-1c6b9c43bd.jpg",
@@ -7,6 +7,8 @@
   "images/blog/the-devschool-difference---humans-first.jpg": "images/blog/the-devschool-difference---humans-first-7667637d56.jpg",
   "images/blog/we-teach-gulpjs-for-front-end-development.jpg": "images/blog/we-teach-gulpjs-for-front-end-development-448d8d4dd3.jpg",
   "images/blog/we-teach-react-js-technology-from-facebook.jpg": "images/blog/we-teach-react-js-technology-from-facebook-206020a052.jpg",
+  "images/blog/why-we-asked-to-be-removed-from-coursereport.jpg": "images/blog/why-we-asked-to-be-removed-from-coursereport-5953281bd9.jpg",
+  "images/blog/why-we-focus-on-teaching-javascript-and-es6.jpg": "images/blog/why-we-focus-on-teaching-javascript-and-es6-3bf9da8537.jpg",
   "images/close.png": "images/close-2f6403f000.png",
   "images/demo.png": "images/demo-19a4b15965.png",
   "images/devschool-stripe.png": "images/devschool-stripe-ed487f9362.png",
@@ -60,5 +62,5 @@
   "images/vimadventures-grab.png": "images/vimadventures-grab-9a22841798.png",
   "images/widget-link-dark.png": "images/widget-link-dark-9f07503478.png",
   "images/world-map.png": "images/world-map-46c91b1940.png",
-  "js/app.min.js": "js/app-44f45b3f03.min.js"
+  "js/app.min.js": "js/app-6f15be5032.min.js"
 }
