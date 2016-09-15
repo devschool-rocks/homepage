@@ -1,5 +1,5 @@
 {
-  "css/app.min.css": "css/app-11a6b20757.min.css",
+  "css/app.min.css": "css/app-608fc8fc86.min.css",
   "images/authors/jim-okelly.png": "images/authors/jim-okelly-8d368c70b6.png",
   "images/bg_black_vinyl.jpg": "images/bg_black_vinyl-6f2cd95493.jpg",
   "images/bg_white_crinkle.jpg": "images/bg_white_crinkle-1c6b9c43bd.jpg",
@@ -13,7 +13,6 @@
   "images/demo.png": "images/demo-19a4b15965.png",
   "images/devschool-stripe.png": "images/devschool-stripe-ed487f9362.png",
   "images/egghead-grab.png": "images/egghead-grab-9c1c75130d.png",
-  "images/favicons/apple-touch-icon-114x114.png": "images/favicons/apple-touch-icon-114x114-4c4fc19bf0.png",
   "images/favicons/apple-touch-icon-120x120.png": "images/favicons/apple-touch-icon-120x120-dd571d678f.png",
   "images/favicons/apple-touch-icon-144x144.png": "images/favicons/apple-touch-icon-144x144-5c7265bdbd.png",
   "images/favicons/apple-touch-icon-57x57.png": "images/favicons/apple-touch-icon-57x57-a9bc74f93e.png",
@@ -47,7 +46,6 @@
   "images/tools/css3.png": "images/tools/css3-457dbe700c.png",
   "images/tools/express.png": "images/tools/express-8815f8ef70.png",
   "images/tools/git.png": "images/tools/git-96717697d5.png",
-  "images/tools/gulp.png": "images/tools/gulp-d546723cc9.png",
   "images/tools/html5.png": "images/tools/html5-433b387c4c.png",
   "images/tools/javascript.png": "images/tools/javascript-3b24ff9de0.png",
   "images/tools/linux.png": "images/tools/linux-e21d9aa899.png",
