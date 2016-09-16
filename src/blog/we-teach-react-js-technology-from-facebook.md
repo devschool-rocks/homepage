@@ -15,7 +15,7 @@ Now fast forward more than a year and it is clear to see that React is the winne
 
 ## Built for speed and reliability
 
-Facebook's UI is pretty complicated. And if you spend any time in their Ads manager, you will see some **really complex** web forms that would make a mere mortal developer of the past absolutely cringe. All that interraction, all those custom HTML elements!
+Facebook's UI is pretty complicated. And if you spend any time in their Ads manager, you will see some **really complex** web forms that would make a mere mortal developer of the past absolutely cringe. All that interaction, all those custom HTML elements!
 
 And yet in React, most of this complexity becomes trivial work. You describe your UI in a set of components that contain components and each component is responsible for a single job or piece of screen real estate. Your HTML is neatly embedded inside of a JavaScript module and the view is a direct representation of it's state.
 
