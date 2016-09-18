@@ -2,34 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://devschool.rocks/</loc>
-        <lastmod>2016-09-16T08:22:10.000Z</lastmod>
+        <lastmod>2016-09-18T22:08:46.000Z</lastmod>
     </url>
     <url>
         <loc>https://devschool.rocks/blog/</loc>
-        <lastmod>2016-09-16T08:22:07.000Z</lastmod>
+        <lastmod>2016-09-18T22:08:45.000Z</lastmod>
     </url>
     <url>
         <loc>https://devschool.rocks/build-an-adventure-game-learn-nodejs/</loc>
-        <lastmod>2016-09-16T08:22:06.000Z</lastmod>
+        <lastmod>2016-09-18T22:08:45.000Z</lastmod>
     </url>
     <url>
         <loc>https://devschool.rocks/the-devschool-difference-humans-first/</loc>
-        <lastmod>2016-09-16T08:22:06.000Z</lastmod>
-    </url>
-    <url>
-        <loc>https://devschool.rocks/we-teach-gulpjs-for-front-end-development/</loc>
-        <lastmod>2016-09-16T08:22:07.000Z</lastmod>
+        <lastmod>2016-09-18T22:08:45.000Z</lastmod>
     </url>
     <url>
         <loc>https://devschool.rocks/we-teach-react-js-technology-from-facebook/</loc>
-        <lastmod>2016-09-16T08:22:07.000Z</lastmod>
+        <lastmod>2016-09-18T22:08:45.000Z</lastmod>
     </url>
     <url>
         <loc>https://devschool.rocks/why-we-asked-to-be-removed-from-coursereport/</loc>
-        <lastmod>2016-09-16T08:22:07.000Z</lastmod>
+        <lastmod>2016-09-18T22:08:45.000Z</lastmod>
+    </url>
+    <url>
+        <loc>https://devschool.rocks/we-teach-gulpjs-for-front-end-development/</loc>
+        <lastmod>2016-09-18T22:08:45.000Z</lastmod>
     </url>
     <url>
         <loc>https://devschool.rocks/why-we-focus-on-teaching-javascript-and-es6/</loc>
-        <lastmod>2016-09-16T08:22:07.000Z</lastmod>
+        <lastmod>2016-09-18T22:08:45.000Z</lastmod>
     </url>
 </urlset>
