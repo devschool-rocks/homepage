@@ -16,6 +16,7 @@
   "images/favicons/apple-touch-icon-114x114.png": "images/favicons/apple-touch-icon-114x114-4c4fc19bf0.png",
   "images/favicons/apple-touch-icon-120x120.png": "images/favicons/apple-touch-icon-120x120-dd571d678f.png",
   "images/favicons/apple-touch-icon-144x144.png": "images/favicons/apple-touch-icon-144x144-5c7265bdbd.png",
+  "images/favicons/apple-touch-icon-152x152.png": "images/favicons/apple-touch-icon-152x152-0fd690081c.png",
   "images/favicons/apple-touch-icon-57x57.png": "images/favicons/apple-touch-icon-57x57-a9bc74f93e.png",
   "images/favicons/apple-touch-icon-60x60.png": "images/favicons/apple-touch-icon-60x60-aa222f764b.png",
   "images/favicons/apple-touch-icon-72x72.png": "images/favicons/apple-touch-icon-72x72-c5659bd294.png",
@@ -62,5 +63,5 @@
   "images/vimadventures-grab.png": "images/vimadventures-grab-9a22841798.png",
   "images/widget-link-dark.png": "images/widget-link-dark-9f07503478.png",
   "images/world-map.png": "images/world-map-46c91b1940.png",
-  "js/app.min.js": "js/app-6f15be5032.min.js"
+  "js/app.min.js": "js/app-6e580f98dd.min.js"
 }
